@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors on Idan Schwartz</title>
+    <link>https://idansc.github.io/authors/</link>
+    <description>Recent content in Authors on Idan Schwartz</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 12 Jun 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://idansc.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A. ~G. Schwing</title>
+      <link>https://idansc.github.io/authors/a.-~g.-schwing/</link>
+      <pubDate>Wed, 12 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://idansc.github.io/authors/a.-~g.-schwing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>I. Schwartz</title>
+      <link>https://idansc.github.io/authors/i.-schwartz/</link>
+      <pubDate>Wed, 12 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://idansc.github.io/authors/i.-schwartz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>T. Hazan</title>
+      <link>https://idansc.github.io/authors/t.-hazan/</link>
+      <pubDate>Wed, 12 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://idansc.github.io/authors/t.-hazan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://idansc.github.io/authors/admin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://idansc.github.io/authors/admin/</guid>
+      <description>Idan&amp;rsquo;s research is centered around cognition in deep learning models. This includes attention models, multimodal problems, and AI tasks; such as, visual question answering and visual dialog.
+Idan Schwartz is a doctoral candidate in the Computer Science department at the Technion working with Alexander G. Schwing and Tamir Hazan. In 2016 he joined eBay as a researcher, applying computer vision and natural language processing solutions for eBay&amp;rsquo;s catalog. In 2019 he joined Microsoft as a researcher for Cortana virtual assistant.</description>
+    </item>
+    
+  </channel>
+</rss>
