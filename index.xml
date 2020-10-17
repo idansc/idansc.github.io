@@ -6,10 +6,19 @@
     <description>Recent content on Idan Schwartz</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 12 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2020 00:00:00 +0000</lastBuildDate>
     
 	    <atom:link href="https://idansc.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Removing Bias in Multi-modal Classifiers: Regularization by Maximizing Functional Entropies</title>
+      <link>https://idansc.github.io/publication/gat-neurips-2020/</link>
+      <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://idansc.github.io/publication/gat-neurips-2020/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>A Simple Baseline for Audio-Visual Scene-Aware Dialog</title>
