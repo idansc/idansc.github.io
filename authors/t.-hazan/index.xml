@@ -6,7 +6,25 @@
     <description>Recent content in T. Hazan on Idan Schwartz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://idansc.github.io/authors/t.-hazan/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 20 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://idansc.github.io/authors/t.-hazan/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Video and Text Matching with Conditioned Embeddings</title>
+      <link>https://idansc.github.io/publication/ali2022video/</link>
+      <pubDate>Fri, 20 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://idansc.github.io/publication/ali2022video/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Latent space explanation by intervention</title>
+      <link>https://idansc.github.io/publication/gat2022latent/</link>
+      <pubDate>Sun, 02 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://idansc.github.io/publication/gat2022latent/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Removing Bias in Multi-modal Classifiers: Regularization by Maximizing Functional Entropies</title>
       <link>https://idansc.github.io/publication/gat-neurips-2020/</link>
