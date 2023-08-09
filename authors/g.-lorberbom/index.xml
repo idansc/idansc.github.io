@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>G. Lorberbom on Idan Schwartz</title>
+    <link>https://idansc.github.io/authors/g.-lorberbom/</link>
+    <description>Recent content in G. Lorberbom on Idan Schwartz</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 02 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://idansc.github.io/authors/g.-lorberbom/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Latent space explanation by intervention</title>
+      <link>https://idansc.github.io/publication/gat2022latent/</link>
+      <pubDate>Sun, 02 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://idansc.github.io/publication/gat2022latent/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

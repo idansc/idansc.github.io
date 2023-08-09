@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>L. Wolf on Idan Schwartz</title>
+    <link>https://idansc.github.io/authors/l.-wolf/</link>
+    <description>Recent content in L. Wolf on Idan Schwartz</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 20 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://idansc.github.io/authors/l.-wolf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Discriminative Class Tokens for Text-to-Image Diffusion Models</title>
+      <link>https://idansc.github.io/publication/schwartz2023discriminative/</link>
+      <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://idansc.github.io/publication/schwartz2023discriminative/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AudioToken: Adaptation of Text-Conditioned Diffusion Models for Audio-to-Image Generation</title>
+      <link>https://idansc.github.io/publication/yariv2023audiotoken/</link>
+      <pubDate>Thu, 20 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://idansc.github.io/publication/yariv2023audiotoken/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Describing Sets of Images with Textual-PCA</title>
+      <link>https://idansc.github.io/publication/hupert2022describing/</link>
+      <pubDate>Thu, 20 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://idansc.github.io/publication/hupert2022describing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Optimizing Relevance Maps of Vision Transformers Improves Robustness</title>
+      <link>https://idansc.github.io/publication/chefer2022optimizing/</link>
+      <pubDate>Wed, 20 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://idansc.github.io/publication/chefer2022optimizing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ZeroCap: Zero-Shot Image-to-Text Generation for Visual-Semantic Arithmetic</title>
+      <link>https://idansc.github.io/publication/tewel2022zerocap/</link>
+      <pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://idansc.github.io/publication/tewel2022zerocap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Video and Text Matching with Conditioned Embeddings</title>
+      <link>https://idansc.github.io/publication/ali2022video/</link>
+      <pubDate>Fri, 20 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://idansc.github.io/publication/ali2022video/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
