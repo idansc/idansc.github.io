@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ameen Ali on Idan Schwartz</title>
+    <link>https://idansc.github.io/authors/ameen-ali/</link>
+    <description>Recent content in Ameen Ali on Idan Schwartz</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://idansc.github.io/authors/ameen-ali/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Removing Bias in Multi-modal Classifiers: Regularization by Maximizing Functional Entropies</title>
+      <link>https://idansc.github.io/publication/ali2022video/</link>
+      <pubDate>Sat, 01 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://idansc.github.io/publication/ali2022video/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
