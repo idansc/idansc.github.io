@@ -6,13 +6,13 @@
     <description>Recent content in L. Wolf on Idan Schwartz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://idansc.github.io/authors/l.-wolf/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://idansc.github.io/authors/l.-wolf/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Discriminative Class Tokens for Text-to-Image Diffusion Models</title>
-      <link>https://idansc.github.io/publication/schwartz2023discriminative/</link>
-      <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
+      <title>Zero-shot video captioning with evolving pseudo-tokens</title>
+      <link>https://idansc.github.io/publication/tewel2022zero/</link>
+      <pubDate>Wed, 23 Aug 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://idansc.github.io/publication/schwartz2023discriminative/</guid>
+      <guid>https://idansc.github.io/publication/tewel2022zero/</guid>
       <description></description>
     </item>
     
@@ -22,6 +22,15 @@
       <pubDate>Thu, 20 Apr 2023 00:00:00 +0000</pubDate>
       
       <guid>https://idansc.github.io/publication/yariv2023audiotoken/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Discriminative Class Tokens for Text-to-Image Diffusion Models</title>
+      <link>https://idansc.github.io/publication/schwartz2023discriminative/</link>
+      <pubDate>Thu, 20 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://idansc.github.io/publication/schwartz2023discriminative/</guid>
       <description></description>
     </item>
     
