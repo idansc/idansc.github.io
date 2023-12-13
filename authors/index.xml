@@ -6,11 +6,29 @@
     <description>Recent content in Authors on Idan Schwartz</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://idansc.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://idansc.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>G. Yariv</title>
+      <link>https://idansc.github.io/authors/g.-yariv/</link>
+      <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://idansc.github.io/authors/g.-yariv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>I. Gat</title>
+      <link>https://idansc.github.io/authors/i.-gat/</link>
+      <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://idansc.github.io/authors/i.-gat/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>I. Schwartz</title>
       <link>https://idansc.github.io/authors/i.-schwartz/</link>
-      <pubDate>Wed, 23 Aug 2023 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
       
       <guid>https://idansc.github.io/authors/i.-schwartz/</guid>
       <description></description>
@@ -19,9 +37,27 @@
     <item>
       <title>L. Wolf</title>
       <link>https://idansc.github.io/authors/l.-wolf/</link>
-      <pubDate>Wed, 23 Aug 2023 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
       
       <guid>https://idansc.github.io/authors/l.-wolf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>S. Benaim</title>
+      <link>https://idansc.github.io/authors/s.-benaim/</link>
+      <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://idansc.github.io/authors/s.-benaim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Y. Adi</title>
+      <link>https://idansc.github.io/authors/y.-adi/</link>
+      <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://idansc.github.io/authors/y.-adi/</guid>
       <description></description>
     </item>
     
@@ -53,29 +89,11 @@
     </item>
     
     <item>
-      <title>G. Yariv</title>
-      <link>https://idansc.github.io/authors/g.-yariv/</link>
-      <pubDate>Thu, 20 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://idansc.github.io/authors/g.-yariv/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>H. Chefer</title>
       <link>https://idansc.github.io/authors/h.-chefer/</link>
       <pubDate>Thu, 20 Apr 2023 00:00:00 +0000</pubDate>
       
       <guid>https://idansc.github.io/authors/h.-chefer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>I. Gat</title>
-      <link>https://idansc.github.io/authors/i.-gat/</link>
-      <pubDate>Thu, 20 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://idansc.github.io/authors/i.-gat/</guid>
       <description></description>
     </item>
     
@@ -98,29 +116,11 @@
     </item>
     
     <item>
-      <title>S. Benaim</title>
-      <link>https://idansc.github.io/authors/s.-benaim/</link>
-      <pubDate>Thu, 20 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://idansc.github.io/authors/s.-benaim/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>V. Snæbjarnarson</title>
       <link>https://idansc.github.io/authors/v.-sn%C3%A6bjarnarson/</link>
       <pubDate>Thu, 20 Apr 2023 00:00:00 +0000</pubDate>
       
       <guid>https://idansc.github.io/authors/v.-sn%C3%A6bjarnarson/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Y. Adi</title>
-      <link>https://idansc.github.io/authors/y.-adi/</link>
-      <pubDate>Thu, 20 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://idansc.github.io/authors/y.-adi/</guid>
       <description></description>
     </item>
     
@@ -193,8 +193,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://idansc.github.io/authors/admin/</guid>
-      <description>Idan&amp;rsquo;s research revolves around cognition in deep learning models, encompassing multimodal problems, attention, model perceptiveness, and model comprehension, particularly in AI tasks such as visual question answering and generative AI.
-Idan Schwartz is a postdoctoral researcher in the Computer Science department at Tel-Aviv University, collaborating with Lior Wolf. Prior to this, he completed his PhD in the Computer Science department at the Technion, under the supervision of Alexander G. Schwing and Tamir Hazan.</description>
+      <description>Idan&amp;rsquo;s research revolves around cognition in deep learning models, encompassing multimodal problems, attention, model perceptiveness, and model comprehension.
+Idan is a postdoctoral researcher in the Computer Science department at Tel-Aviv University, where he collaborates with Prof. Lior Wolf. Before this, he earned his PhD in Computer Science from the Technion, under the supervision of Prof. Alexander G. Schwing and Prof. Tamir Hazan. In 2016, he joined eBay as a researcher, applying computer vision and natural language processing solutions to enhance eBay’s catalog.</description>
     </item>
     
   </channel>
