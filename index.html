@@ -1332,20 +1332,16 @@
   <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
 
   <span itemprop="author" class="article-metadata li-cite-author">
-    <span itemprop="author name" itemtype="http://schema.org/Person" style="color: white;">Yair Shpitzer</span>, <span itemprop="author name" itemtype="http://schema.org/Person" style="color: white;">Gal Chechik</span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/i.-schwartz/" style="color: white;">Idan Schwartz</a></span>
+    <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/y.-shpitzer/" style="color: white;">Yair Shpitzer</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/g.-chechik/" style="color: white;">Gal Chechik</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/i.-schwartz/" style="color: white;">Idan Schwartz</a></span>
   </span>
   (2025).
-  <a href="https://arxiv.org/abs/2503.16025" itemprop="name">Single Image Iterative Subject-driven Generation and Editing</a>.
+  <a href="/publication/siso/" itemprop="name" target="_blank" rel="noopener">Single Image Iterative Subject-driven Generation and Editing</a>.
   <em>arXiv</em>.
   
   <p>
     <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2503.16025" target="_blank" rel="noopener">PDF</a>
     <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://siso-paper.github.io/" target="_blank" rel="noopener">Project Page</a>
   </p>
-
-  <div class="article-style" itemprop="articleBody">
-    Personalizing image generation and editing is particularly challenging when we only have a few images of the subject, or even a single image. A common approach to personalization is concept learning, which can integrate the subject into existing models relatively quickly, but produces images whose quality tends to deteriorate quickly when the number of subject images is small. Quality can be improved by pre-training an encoder, but training restricts generation to the training distribution, and is time consuming. It is still an open hard challenge to personalize image generation and editing from a single image without training. Here, we present SISO, a novel, training-free approach based on optimizing a similarity score with an input subject image. More specifically, SISO iteratively generates images and optimizes the model based on loss of similarity with the given subject image until a satisfactory level of similarity is achieved, allowing plug-and-play optimization to any image generator. We evaluated SISO in two tasks, image editing and image generation, using a diverse data set of personal subjects, and demonstrate significant improvements over existing methods in image quality, subject fidelity, and background preservation.
-  </div>
 </div>
 
       
@@ -1355,19 +1351,15 @@
   <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
 
   <span itemprop="author" class="article-metadata li-cite-author">
-    <span itemprop="author name" itemtype="http://schema.org/Person" style="color: white;">Oz Zafar</span>, <span itemprop="author name" itemtype="http://schema.org/Person" style="color: white;">Lior Wolf</span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/i.-schwartz/" style="color: white;">Idan Schwartz</a></span>
+    <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/o.-zafar/" style="color: white;">Oz Zafar</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/l.-wolf/" style="color: white;">Lior Wolf</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/i.-schwartz/" style="color: white;">Idan Schwartz</a></span>
   </span>
   (2024).
-  <a href="https://arxiv.org/abs/2408.11721" itemprop="name">Iterative Object Count Optimization for Text-to-image Diffusion Models</a>.
+  <a href="/publication/iterative-count/" itemprop="name" target="_blank" rel="noopener">Iterative Object Count Optimization for Text-to-image Diffusion Models</a>.
   <em>arXiv</em>.
   
   <p>
     <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2408.11721" target="_blank" rel="noopener">PDF</a>
   </p>
-
-  <div class="article-style" itemprop="articleBody">
-    We address a persistent challenge in text-to-image models: accurately generating a specified number of objects. Current models, which learn from image-text pairs, inherently struggle with counting, as training data cannot depict every possible number of objects for any given object. To solve this, we propose optimizing the generated image based on a counting loss derived from a counting model that aggregates an object's potential. Employing an out-of-the-box counting model is challenging for two reasons: first, the model requires a scaling hyperparameter for the potential aggregation that varies depending on the viewpoint of the objects, and second, classifier guidance techniques require modified models that operate on noisy intermediate diffusion steps. To address these challenges, we propose an iterated online training mode that improves the accuracy of inferred images while altering the text conditioning embedding and dynamically adjusting hyperparameters. Our method offers three key advantages: (i) it can consider non-derivable counting techniques based on detection models, (ii) it is a zero-shot plug-and-play solution facilitating rapid changes to the counting techniques and image generation methods, and (iii) the optimized counting token can be reused to generate accurate images without additional optimization. We evaluate the generation of various objects and show significant improvements in accuracy.
-  </div>
 </div>
 
       
