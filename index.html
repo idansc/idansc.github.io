@@ -2303,7 +2303,7 @@
       
       <li>
         <i class="fa-li fas fa-map-marker-alt fa-2x" aria-hidden="true"></i>
-        <span>Computer Science Department, Room 213<br>Building 503<br>Bar Ilan University<br>Ramat Gan, Tel Aviv District, Israel</span>
+        <span>Computer Science Department, Room 213<br>Building 503<br>Bar-Ilan University<br>Ramat Gan, Israel</span>
       </li>
       
 
@@ -2312,13 +2312,48 @@
     
     <div class="d-none">
       <input id="map-provider" value="2">
-      <input id="map-lat" value="32.0723">
-      <input id="map-lng" value="34.8325">
-      <input id="map-dir" value="Bar Ilan University, Ramat Gan">
-      <input id="map-zoom" value="15">
+      <input id="map-lat" value="32.0700">
+      <input id="map-lng" value="34.8430">
+      <input id="map-dir" value="Bar-Ilan University, Building 503, Ramat Gan, Israel">
+      <input id="map-zoom" value="17">
       <input id="map-api-key" value="">
     </div>
-    <div id="map"></div>
+
+    <style>
+      .contact-map-wrap { margin-top: 1rem; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08); border: 1px solid #eef0f5; position: relative; }
+      body.dark .contact-map-wrap { border-color: #3a3e4d; box-shadow: 0 1px 3px rgba(0,0,0,0.3); }
+      .contact-map-wrap iframe { display: block; width: 100%; height: 360px; border: 0; }
+      .map-actions { display: flex; gap: 0.5rem; margin-top: 0.85rem; flex-wrap: wrap; }
+      .map-action {
+        display: inline-flex; align-items: center; gap: 0.45rem;
+        padding: 0.5rem 0.95rem; border-radius: 8px;
+        background: #2962ff; color: #fff !important;
+        text-decoration: none !important; font-size: 0.88rem; font-weight: 600;
+        transition: background 0.15s ease, transform 0.15s ease;
+      }
+      .map-action:hover { background: #1e50e0; transform: translateY(-1px); color: #fff !important; }
+      .map-action.secondary { background: #f4f6fb; color: #1a1a1a !important; border: 1px solid #e6eaf2; }
+      .map-action.secondary:hover { background: #e9edf6; color: #1a1a1a !important; }
+      body.dark .map-action.secondary { background: #2f3240; color: #f8f8f2 !important; border-color: #3a3e4d; }
+      body.dark .map-action.secondary:hover { background: #3a3e4d; color: #f8f8f2 !important; }
+    </style>
+
+    <div class="contact-map-wrap">
+      <iframe
+        src="https://www.openstreetmap.org/export/embed.html?bbox=34.83825%2C32.06710%2C34.84775%2C32.07290&amp;layer=mapnik&amp;marker=32.0700%2C34.8430"
+        loading="lazy"
+        title="Bar-Ilan University, Building 503 — map"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="map-actions">
+      <a class="map-action" href="https://www.google.com/maps/dir/?api=1&destination=Bar-Ilan+University+Building+503+Ramat+Gan" target="_blank" rel="noopener">
+        <i class="fas fa-directions"></i> Get directions
+      </a>
+      <a class="map-action secondary" href="https://www.openstreetmap.org/?mlat=32.0700&amp;mlon=34.8430#map=17/32.0700/34.8430" target="_blank" rel="noopener">
+        <i class="fas fa-external-link-alt"></i> Open in OpenStreetMap
+      </a>
+    </div>
     
 
   </div>
