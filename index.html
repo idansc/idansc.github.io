@@ -589,215 +589,80 @@
     </div>
   </section>
 
-  <section id="lab" class="home-section lab-section">
+  <section id="lab" class="home-section">
     <div class="container">
 
       <style>
-        .lab-section { padding-bottom: 4rem; }
-        .lab-section .lab-header { text-align: center; margin-bottom: 2.5rem; }
-        .lab-section .lab-header h1 { font-size: 2.4rem; font-weight: 700; margin-bottom: 0.6rem; letter-spacing: -0.01em; }
-        .lab-section .lab-header p {
-          color: #6c757d; max-width: 720px; margin: 0 auto; font-size: 1.05rem; line-height: 1.55;
+        .lab-list { margin: 0; padding: 0; list-style: none; }
+        .lab-list li {
+          padding: 0.32rem 0;
+          font-size: 1rem;
+          line-height: 1.5;
         }
-        body.dark .lab-section .lab-header p { color: #b6bcc9; }
+        .lab-list li .joint {
+          color: #6c757d;
+          font-size: 0.92rem;
+        }
+        body.dark .lab-list li .joint { color: #b6bcc9; }
+        .lab-list li .paper {
+          color: #6c757d;
+          font-size: 0.92rem;
+        }
+        body.dark .lab-list li .paper { color: #b6bcc9; }
+        .lab-list li .paper a { color: inherit; text-decoration: underline; text-decoration-color: rgba(108,117,125,0.35); }
+        .lab-list li .paper a:hover { color: #2962ff; text-decoration-color: #2962ff; }
+        body.dark .lab-list li .paper a:hover { color: #8aa4ff; text-decoration-color: #8aa4ff; }
 
-        .lab-stats {
-          display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap;
-          margin: 2rem 0 3rem 0;
-          padding: 1.4rem 1rem; border-radius: 14px;
-          background: linear-gradient(135deg, #eef2ff 0%, #f4f6fb 100%);
-          border: 1px solid #e6eaf6;
-        }
-        body.dark .lab-stats {
-          background: linear-gradient(135deg, #2a2e3d 0%, #232631 100%);
-          border-color: #3a3e4d;
-        }
-        .lab-stat { text-align: center; min-width: 110px; }
-        .lab-stat .num {
-          font-size: 2rem; font-weight: 700; color: #2962ff; line-height: 1;
-          font-variant-numeric: tabular-nums;
-        }
-        body.dark .lab-stat .num { color: #8aa4ff; }
-        .lab-stat .label {
-          display: block; margin-top: 0.35rem; font-size: 0.78rem;
-          letter-spacing: 0.08em; text-transform: uppercase;
-          color: #6c757d; font-weight: 600;
-        }
-        body.dark .lab-stat .label { color: #b6bcc9; }
-
-        .lab-group { margin-bottom: 2.5rem; }
-        .lab-group-header {
-          display: flex; align-items: baseline; gap: 0.85rem;
-          margin-bottom: 1.2rem; padding-bottom: 0.6rem;
-          border-bottom: 2px solid #eef0f5;
-        }
-        body.dark .lab-group-header { border-bottom-color: #3a3e4d; }
-        .lab-group-header h2 {
-          font-size: 1.35rem; font-weight: 700; margin: 0; color: #1a1a1a;
-        }
-        body.dark .lab-group-header h2 { color: #f8f8f2; }
-        .lab-group-header .lab-count {
-          font-size: 0.85rem; color: #8a94a6; font-weight: 500;
-        }
-
-        .lab-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-          gap: 0.85rem;
-        }
-
-        .lab-card {
-          display: block;
-          padding: 1.05rem 1.2rem;
-          background: #ffffff;
-          border: 1px solid #eef0f5;
-          border-left: 3px solid #d6e1ff;
-          border-radius: 10px;
-          transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
-        }
-        .lab-card:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 8px 20px rgba(41, 98, 255, 0.08), 0 2px 4px rgba(0,0,0,0.04);
-          border-left-color: #2962ff;
-          border-color: #d6e1ff;
-          border-left-color: #2962ff;
-        }
-        body.dark .lab-card { background: #2f3240; border-color: #3a3e4d; border-left-color: #4a5680; }
-        body.dark .lab-card:hover { border-color: #4a5680; border-left-color: #8aa4ff; box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
-
-        .lab-info .lab-name {
-          font-size: 1.05rem; font-weight: 600; color: #1a1a1a;
-          line-height: 1.25; margin: 0 0 0.22rem 0;
-          letter-spacing: -0.005em;
-        }
-        body.dark .lab-info .lab-name { color: #f8f8f2; }
-        .lab-info .lab-meta {
-          font-size: 0.82rem; color: #6c757d;
-          line-height: 1.35; margin: 0;
-        }
-        body.dark .lab-info .lab-meta { color: #b6bcc9; }
-        .lab-info .lab-meta a { color: inherit; text-decoration: underline; text-decoration-color: rgba(108, 117, 125, 0.4); }
-
-        .lab-card.alumni .lab-paper {
-          display: inline-block; margin-top: 0.25rem;
-          font-size: 0.78rem; font-weight: 600;
+        .lab-subhead {
+          font-size: 0.78rem;
+          font-weight: 700;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
           color: #2962ff;
+          margin: 1.6rem 0 0.5rem 0;
         }
-        body.dark .lab-paper { color: #8aa4ff; }
-
-        @media (max-width: 575px) {
-          .lab-stats { gap: 1.4rem; }
-          .lab-stat .num { font-size: 1.6rem; }
-        }
+        body.dark .lab-subhead { color: #8aa4ff; }
+        .lab-subhead:first-of-type { margin-top: 0; }
       </style>
 
-      <div class="lab-header">
-        <h1>The Multimodal Lab</h1>
-        <p>I lead the Multimodal Lab at Bar-Ilan University. We study multimodal generative models, attention mechanisms, and inference-time control &mdash; with students working across vision, language, audio, and video.</p>
-      </div>
-
-      <div class="lab-stats">
-        <div class="lab-stat"><div class="num">1</div><span class="label">PhD</span></div>
-        <div class="lab-stat"><div class="num">8</div><span class="label">MSc</span></div>
-        <div class="lab-stat"><div class="num">2</div><span class="label">Alumni</span></div>
-        <div class="lab-stat"><div class="num">4</div><span class="label">Joint Advisors</span></div>
-      </div>
-
-      <div class="lab-group">
-        <div class="lab-group-header">
-          <h2>PhD Students</h2>
-          <span class="lab-count">1 active</span>
+      <div class="row">
+        <div class="col-12 col-lg-4 section-heading">
+          <h1>Lab</h1>
+          <p style="color: #6c757d;">The Multimodal Lab at Bar-Ilan University &mdash; multimodal generative models, attention, and inference-time control.</p>
         </div>
-        <div class="lab-grid">
-          <div class="lab-card">
-            <div class="lab-info">
-              <p class="lab-name">Ben Fishman</p>
-              <p class="lab-meta">Joint with Gal Chechik</p>
-            </div>
-          </div>
-        </div>
-      </div>
+        <div class="col-12 col-lg-8">
 
-      <div class="lab-group">
-        <div class="lab-group-header">
-          <h2>MSc Students</h2>
-          <span class="lab-count">8 active</span>
-        </div>
-        <div class="lab-grid">
-          <div class="lab-card">
-            <div class="lab-info">
-              <p class="lab-name">Gilad Carmel</p>
-              <p class="lab-meta">MSc Candidate</p>
-            </div>
-          </div>
-          <div class="lab-card">
-            <div class="lab-info">
-              <p class="lab-name">Mark Vexler</p>
-              <p class="lab-meta">MSc Candidate</p>
-            </div>
-          </div>
-          <div class="lab-card">
-            <div class="lab-info">
-              <p class="lab-name">Uriel Dolev</p>
-              <p class="lab-meta">Joint with Yoav Goldberg</p>
-            </div>
-          </div>
-          <div class="lab-card">
-            <div class="lab-info">
-              <p class="lab-name">Amit Ronen</p>
-              <p class="lab-meta">MSc Candidate</p>
-            </div>
-          </div>
-          <div class="lab-card">
-            <div class="lab-info">
-              <p class="lab-name">Aviv Weidenfeld</p>
-              <p class="lab-meta">MSc Candidate</p>
-            </div>
-          </div>
-          <div class="lab-card">
-            <div class="lab-info">
-              <p class="lab-name">Omri Keren</p>
-              <p class="lab-meta">MSc Candidate</p>
-            </div>
-          </div>
-          <div class="lab-card">
-            <div class="lab-info">
-              <p class="lab-name">Binyamin Ramati</p>
-              <p class="lab-meta">MSc Candidate</p>
-            </div>
-          </div>
-          <div class="lab-card">
-            <div class="lab-info">
-              <p class="lab-name">Yona Orunov</p>
-              <p class="lab-meta">MSc Candidate</p>
-            </div>
-          </div>
+          <h3 class="lab-subhead">PhD Students</h3>
+          <ul class="lab-list">
+            <li>Ben Fishman <span class="joint">(joint with Gal Chechik)</span></li>
+          </ul>
+
+          <h3 class="lab-subhead">MSc Students</h3>
+          <ul class="lab-list">
+            <li>Gilad Carmel</li>
+            <li>Mark Vexler</li>
+            <li>Uriel Dolev <span class="joint">(joint with Yoav Goldberg)</span></li>
+            <li>Amit Ronen</li>
+            <li>Aviv Weidenfeld</li>
+            <li>Omri Keren</li>
+            <li>Binyamin Ramati</li>
+            <li>Yona Orunov</li>
+          </ul>
+
+          <h3 class="lab-subhead">Alumni</h3>
+          <ul class="lab-list">
+            <li>
+              Shira Schiber <span class="joint">(joint with Ofir Lindenbaum)</span>
+              &mdash; <span class="paper"><a href="https://arxiv.org/abs/2510.02226" target="_blank" rel="noopener"><em>TempoControl</em>, CVPR 2026</a></span>
+            </li>
+            <li>
+              Yair Shpitzer <span class="joint">(joint with Gal Chechik)</span>
+              &mdash; <span class="paper"><a href="https://arxiv.org/abs/2503.16025" target="_blank" rel="noopener"><em>SISO</em>, CVPR 2026 Workshop</a></span>
+            </li>
+          </ul>
+
         </div>
       </div>
-
-      <div class="lab-group">
-        <div class="lab-group-header">
-          <h2>Alumni</h2>
-          <span class="lab-count">2 graduated</span>
-        </div>
-        <div class="lab-grid">
-          <div class="lab-card alumni">
-            <div class="lab-info">
-              <p class="lab-name">Shira Schiber</p>
-              <p class="lab-meta">Joint with Ofir Lindenbaum</p>
-              <a class="lab-paper" href="https://arxiv.org/abs/2510.02226" target="_blank" rel="noopener">TempoControl &middot; CVPR'26 &rsaquo;</a>
-            </div>
-          </div>
-          <div class="lab-card alumni">
-            <div class="lab-info">
-              <p class="lab-name">Yair Shpitzer</p>
-              <p class="lab-meta">Joint with Gal Chechik</p>
-              <a class="lab-paper" href="https://arxiv.org/abs/2503.16025" target="_blank" rel="noopener">SISO &middot; CVPR'26 Workshop &rsaquo;</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
   </section>
 
