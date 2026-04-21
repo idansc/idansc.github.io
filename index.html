@@ -123,14 +123,17 @@
     
     
   
-  <meta property="twitter:card" content="summary">
+  <meta property="twitter:card" content="summary_large_image">
   
   <meta property="twitter:site" content="@idansc">
   <meta property="twitter:creator" content="@idansc">
   
+  <meta property="og:type" content="profile">
+  <meta property="profile:first_name" content="Idan">
+  <meta property="profile:last_name" content="Schwartz">
   <meta property="og:site_name" content="Idan Schwartz">
   <meta property="og:url" content="https://idansc.github.io/">
-  <meta property="og:title" content="Idan Schwartz">
+  <meta property="og:title" content="Idan Schwartz — Multimodal Lab, Bar-Ilan University">
   <meta property="og:description" content="Assistant Professor at Bar-Ilan University, leading the Multimodal Lab. Research on multimodal generative models, attention, and inference-time methods."><meta property="og:image" content="https://idansc.github.io/img/icon-192.png">
   <meta property="og:locale" content="en-us">
   
@@ -142,6 +145,41 @@
   
 
   <title>Idan Schwartz</title>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Idan Schwartz",
+    "givenName": "Idan",
+    "familyName": "Schwartz",
+    "url": "https://idansc.github.io/",
+    "image": "https://idansc.github.io/authors/admin/avatar_hu7097852a9792cfa9dd1488c658a78af9_390754_250x250_fill_lanczos_center_3.png",
+    "jobTitle": "Assistant Professor",
+    "worksFor": {
+      "@type": "CollegeOrUniversity",
+      "name": "Bar-Ilan University",
+      "url": "https://www.biu.ac.il/"
+    },
+    "affiliation": {
+      "@type": "Organization",
+      "name": "The Multimodal Lab, Bar-Ilan University"
+    },
+    "knowsAbout": [
+      "Multimodal learning",
+      "Generative models",
+      "Attention mechanisms",
+      "Vision-and-language",
+      "Inference-time methods"
+    ],
+    "sameAs": [
+      "https://scholar.google.com/citations?user=5V-yJT4AAAAJ&hl=en",
+      "https://github.com/idansc",
+      "https://twitter.com/idansc",
+      "https://www.quora.com/profile/Idan-Schwartz"
+    ]
+  }
+  </script>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71" >
@@ -460,7 +498,7 @@
 
       <link itemprop="url" href="">
 
-      <ul class="network-icon" aria-hidden="true">
+      <ul class="network-icon">
         
         
         
@@ -472,8 +510,8 @@
           
         
         <li>
-          <a itemprop="sameAs" href="https://scholar.google.com/citations?user=5V-yJT4AAAAJ&amp;hl=en" target="_blank" rel="noopener">
-            <i class="ai ai-google-scholar big-icon"></i>
+          <a itemprop="sameAs" href="https://scholar.google.com/citations?user=5V-yJT4AAAAJ&amp;hl=en" target="_blank" rel="noopener" aria-label="Google Scholar profile">
+            <i class="ai ai-google-scholar big-icon" aria-hidden="true"></i>
           </a>
         </li>
         
@@ -489,8 +527,8 @@
           
         
         <li>
-          <a itemprop="sameAs" href="https://github.com/idansc" target="_blank" rel="noopener">
-            <i class="fab fa-github big-icon"></i>
+          <a itemprop="sameAs" href="https://github.com/idansc" target="_blank" rel="noopener" aria-label="GitHub profile">
+            <i class="fab fa-github big-icon" aria-hidden="true"></i>
           </a>
         </li>
         
@@ -506,8 +544,8 @@
           
         
         <li>
-          <a itemprop="sameAs" href="https://www.quora.com/profile/Idan-Schwartz" target="_blank" rel="noopener">
-            <i class="fab fa-quora big-icon"></i>
+          <a itemprop="sameAs" href="https://www.quora.com/profile/Idan-Schwartz" target="_blank" rel="noopener" aria-label="Quora profile">
+            <i class="fab fa-quora big-icon" aria-hidden="true"></i>
           </a>
         </li>
         
@@ -523,8 +561,8 @@
           
         
         <li>
-          <a itemprop="sameAs" href="https://twitter.com/idansc" target="_blank" rel="noopener">
-            <i class="fab fa-twitter big-icon"></i>
+          <a itemprop="sameAs" href="https://twitter.com/idansc" target="_blank" rel="noopener" aria-label="Twitter profile">
+            <i class="fab fa-twitter big-icon" aria-hidden="true"></i>
           </a>
         </li>
         
@@ -762,8 +800,12 @@
             .section-subtitle { color: #6c757d; margin-top: 0.5rem; }
             body.dark .section-subtitle { color: #a8b0bb; }
 
+            .highlights-section .row { display: flex; flex-wrap: wrap; }
+            .highlights-section .row > [class*="col-"] { display: flex; }
             .highlight-card {
-              display: block;
+              display: flex;
+              flex-direction: column;
+              width: 100%;
               border-radius: 12px;
               overflow: hidden;
               background: #ffffff;
@@ -798,7 +840,12 @@
               transition: transform 0.4s ease;
             }
             .highlight-card:hover .hc-img-wrap img { transform: scale(1.03); }
-            .highlight-card .hc-body { padding: 0.85rem 1rem 1rem 1rem; }
+            .highlight-card .hc-body {
+              padding: 0.85rem 1rem 1rem 1rem;
+              display: flex;
+              flex-direction: column;
+              flex: 1 1 auto;
+            }
             .highlight-card .hc-venue {
               display: inline-block;
               font-size: 0.72rem;
@@ -2057,6 +2104,16 @@
           vertical-align: middle;
         }
         body.dark .patent-list .patent-id { color: #8aa4ff; background: #1b2647; }
+        .patent-subhead {
+          font-size: 0.78rem;
+          font-weight: 700;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: #6c757d;
+          margin: 0 0 0.5rem 0;
+        }
+        .patent-subhead:not(:first-child) { margin-top: 1.6rem; }
+        body.dark .patent-subhead { color: #8aa4ff; }
       </style>
 
       <div class="row">
@@ -2064,21 +2121,34 @@
           <h1>Patents</h1>
         </div>
         <div class="col-12 col-lg-8">
+          <h2 class="patent-subhead">Granted</h2>
           <ul class="patent-list">
             <li>
-              <span class="patent-title"><a href="https://patentcenter.uspto.gov/applications/18634377" target="_blank" rel="noopener">Resource Distribution Engine(s) for Allocating and Securing Reclaimable Resources Within a Cloud Environment</a></span>
+              <span class="patent-title"><a href="https://patents.google.com/patent/US11636164" target="_blank" rel="noopener">Search System for Providing Web Crawling Query Prioritization Based on Classification Operation Performance</a></span>
               <span class="patent-meta">
-                I. Schwartz, T. Ohayon, G. Yariv, O. Gurfinkel, M. Goldberg, R. Vladimirsky, et&nbsp;al.
-                &middot; 2025
-                <span class="patent-id">US App. 18/634,377</span>
+                I. Guy, I. Schwartz, K. Radinsky
+                &middot; Granted 2023
+                <span class="patent-id">US 11,636,164</span>
               </span>
             </li>
+          </ul>
+
+          <h2 class="patent-subhead">Pending Applications</h2>
+          <ul class="patent-list">
             <li>
               <span class="patent-title"><a href="https://patentcenter.uspto.gov/applications/18924802" target="_blank" rel="noopener">Cloud Instance Type Recommendations</a></span>
               <span class="patent-meta">
                 I. Schwartz, G. Yariv, T. Ohayon
                 &middot; 2025
                 <span class="patent-id">US App. 18/924,802</span>
+              </span>
+            </li>
+            <li>
+              <span class="patent-title"><a href="https://patentcenter.uspto.gov/applications/18634377" target="_blank" rel="noopener">Resource Distribution Engine(s) for Allocating and Securing Reclaimable Resources Within a Cloud Environment</a></span>
+              <span class="patent-meta">
+                I. Schwartz, T. Ohayon, G. Yariv, O. Gurfinkel, M. Goldberg, R. Vladimirsky, et&nbsp;al.
+                &middot; 2025
+                <span class="patent-id">US App. 18/634,377</span>
               </span>
             </li>
             <li>
@@ -2095,14 +2165,6 @@
                 T. Ohayon, I. Schwartz
                 &middot; 2024
                 <span class="patent-id">US App. 18/046,970</span>
-              </span>
-            </li>
-            <li>
-              <span class="patent-title"><a href="https://patents.google.com/patent/US11636164" target="_blank" rel="noopener">Search System for Providing Web Crawling Query Prioritization Based on Classification Operation Performance</a></span>
-              <span class="patent-meta">
-                I. Guy, I. Schwartz, K. Radinsky
-                &middot; Granted 2023
-                <span class="patent-id">US 11,636,164</span>
               </span>
             </li>
             <li>
@@ -2342,6 +2404,20 @@
     </div>
   </section>
 
+
+<style>
+  body.dark .site-footer,
+  body.dark .site-footer .powered-by,
+  body.dark .site-footer .powered-by a,
+  body.dark footer a#back_to_top,
+  body.dark footer a#back_to_top i {
+    color: #b6bcc9 !important;
+  }
+  body.dark .site-footer .powered-by a:hover,
+  body.dark footer a#back_to_top:hover i {
+    color: #8aa4ff !important;
+  }
+</style>
 
 <div class="container">
   <footer class="site-footer">
