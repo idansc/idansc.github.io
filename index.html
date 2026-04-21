@@ -837,7 +837,8 @@
               overflow: hidden;
               padding: 6px;
             }
-            .highlight-card .hc-img-wrap img {
+            .highlight-card .hc-img-wrap img,
+            .highlight-card .hc-img-wrap video {
               max-width: 100%;
               max-height: 100%;
               width: auto;
@@ -845,7 +846,8 @@
               object-fit: contain;
               transition: transform 0.4s ease;
             }
-            .highlight-card:hover .hc-img-wrap img { transform: scale(1.03); }
+            .highlight-card:hover .hc-img-wrap img,
+            .highlight-card:hover .hc-img-wrap video { transform: scale(1.03); }
             .highlight-card .hc-body {
               padding: 0.85rem 1rem 1rem 1rem;
               display: flex;
@@ -902,7 +904,7 @@
 
             <div class="col-md-6 mb-4">
               <a class="highlight-card" href="https://arxiv.org/abs/2510.02226" target="_blank" rel="noopener">
-                <div class="hc-img-wrap"><img src="/img/papers/tempocontrol.jpg" alt="TempoControl teaser"></div>
+                <div class="hc-img-wrap"><video src="/img/papers/tempocontrol.mp4" poster="/img/papers/tempocontrol.jpg" autoplay loop muted playsinline preload="metadata" aria-label="TempoControl teaser"></video></div>
                 <div class="hc-body">
                   <span class="hc-venue">CVPR 2026</span>
                   <h3 class="hc-title">TempoControl: Temporal Attention Guidance for Text-to-Video Models</h3>
@@ -913,8 +915,8 @@
             </div>
 
             <div class="col-md-6 mb-4">
-              <a class="highlight-card" href="https://openaccess.thecvf.com/content/WACV2026/html/Zafar_Detection-Driven_Object_Count_Optimization_for_Text-to-Image_Diffusion_Models_WACV_2026_paper.html" target="_blank" rel="noopener">
-                <div class="hc-img-wrap"><img src="/img/papers/countopt.jpg" alt="Detection-Driven Object Count teaser"></div>
+              <a class="highlight-card" href="https://ozzafar.github.io/count_token/" target="_blank" rel="noopener">
+                <div class="hc-img-wrap"><img src="/img/papers/countopt.gif" alt="Detection-Driven Object Count teaser"></div>
                 <div class="hc-body">
                   <span class="hc-venue">WACV 2026</span>
                   <h3 class="hc-title">Detection-Driven Object Count Optimization for Text-to-Image Diffusion Models</h3>
@@ -949,8 +951,8 @@
             </div>
 
             <div class="col-md-6 mb-4">
-              <a class="highlight-card" href="/publication/schwartz2023discriminative/" target="_blank" rel="noopener">
-                <div class="hc-img-wrap"><img src="/img/papers/discriminative.jpg" alt="Discriminative Class Tokens teaser"></div>
+              <a class="highlight-card" href="https://vesteinn.github.io/disco/" target="_blank" rel="noopener">
+                <div class="hc-img-wrap"><img src="/img/papers/discriminative.gif" alt="Discriminative Class Tokens teaser"></div>
                 <div class="hc-body">
                   <span class="hc-venue">ICCV 2023</span>
                   <h3 class="hc-title">Discriminative Class Tokens for Text-to-Image Diffusion Models</h3>
@@ -1097,12 +1099,13 @@
     <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/g.-yariv/">Guy Yariv</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/i.-schwartz/">Idan Schwartz</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/y.-adi/">Yossi Adi</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/s.-benaim/">Sagie Benaim</a></span>
   </span>
   (2026).
-  <a href="https://openreview.net/forum?id=4ZHogYWNdW" itemprop="name" target="_blank" rel="noopener">LaMI: Augmenting Large Language Models via Late Multi-Image Fusion</a>.
+  <a href="https://guyyariv.github.io/LaMI/" itemprop="name" target="_blank" rel="noopener">LaMI: Augmenting Large Language Models via Late Multi-Image Fusion</a>.
   <em>ACL'26</em>.
 
   <p>
     <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openreview.net/pdf?id=4ZHogYWNdW" target="_blank" rel="noopener">PDF</a>
     <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openreview.net/forum?id=4ZHogYWNdW" target="_blank" rel="noopener">OpenReview</a>
+    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://guyyariv.github.io/LaMI/" target="_blank" rel="noopener">Project Page</a>
   </p>
 </div>
 
@@ -1116,12 +1119,13 @@
     <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/s.-schiber/">Shira Schiber</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/o.-lindenbaum/">Ofir Lindenbaum</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/i.-schwartz/">Idan Schwartz</a></span>
   </span>
   (2026).
-  <a href="https://arxiv.org/abs/2510.02226" itemprop="name" target="_blank" rel="noopener">TempoControl: Temporal Attention Guidance for Text-to-Video Models</a>.
+  <a href="https://shira-schiber.github.io/TempoControl/" itemprop="name" target="_blank" rel="noopener">TempoControl: Temporal Attention Guidance for Text-to-Video Models</a>.
   <em>CVPR'26</em>.
 
   <p>
     <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2510.02226" target="_blank" rel="noopener">PDF</a>
     <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2510.02226" target="_blank" rel="noopener">arXiv</a>
+    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://shira-schiber.github.io/TempoControl/" target="_blank" rel="noopener">Project Page</a>
   </p>
 </div>
 
@@ -1229,12 +1233,13 @@
     <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/i.-schwartz/">I. Schwartz</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/v.-snæbjarnarson/">V. Snæbjarnarson</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/s.-benaim/">S. Benaim</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/h.-chefer/">H. Chefer</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/r.-cotterell/">R. Cotterell</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/l.-wolf/">L. Wolf</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/s.-belongie/">S. Belongie</a></span>
   </span>
   (2023).
-  <a href="/publication/schwartz2023discriminative/" itemprop="name">Discriminative Class Tokens for Text-to-Image Diffusion Models</a>.
+  <a href="https://vesteinn.github.io/disco/" itemprop="name" target="_blank" rel="noopener">Discriminative Class Tokens for Text-to-Image Diffusion Models</a>.
   <em>ICCV'23</em>.
   <p>
     <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openaccess.thecvf.com/content/ICCV2023/papers/Schwartz_Discriminative_Class_Tokens_for_Text-to-Image_Diffusion_Models_ICCV_2023_paper.pdf" target="_blank" rel="noopener">PDF</a>
     <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2303.17155" target="_blank" rel="noopener">arXiv</a>
     <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/idansc/discriminative_class_tokens" target="_blank" rel="noopener">Code</a>
+    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://vesteinn.github.io/disco/" target="_blank" rel="noopener">Project Page</a>
   </p>
 </div>
 
@@ -2127,19 +2132,6 @@
           <h1>Patents</h1>
         </div>
         <div class="col-12 col-lg-8">
-          <h2 class="patent-subhead">Granted</h2>
-          <ul class="patent-list">
-            <li>
-              <span class="patent-title"><a href="https://patents.google.com/patent/US11636164" target="_blank" rel="noopener">Search System for Providing Web Crawling Query Prioritization Based on Classification Operation Performance</a></span>
-              <span class="patent-meta">
-                I. Guy, I. Schwartz, K. Radinsky
-                &middot; Granted 2023
-                <span class="patent-id">US 11,636,164</span>
-              </span>
-            </li>
-          </ul>
-
-          <h2 class="patent-subhead">Pending Applications</h2>
           <ul class="patent-list">
             <li>
               <span class="patent-title"><a href="https://patentcenter.uspto.gov/applications/18924802" target="_blank" rel="noopener">Cloud Instance Type Recommendations</a></span>
@@ -2155,6 +2147,14 @@
                 I. Schwartz, T. Ohayon, G. Yariv, O. Gurfinkel, M. Goldberg, R. Vladimirsky, et&nbsp;al.
                 &middot; 2025
                 <span class="patent-id">US App. 18/634,377</span>
+              </span>
+            </li>
+            <li>
+              <span class="patent-title"><a href="https://patents.google.com/patent/US11915053" target="_blank" rel="noopener">Interruption Predictions for Cloud Compute Instances</a></span>
+              <span class="patent-meta">
+                I. Schwartz, O. Muchnik, J. Cohen, K. McGrath, A. Shachar
+                &middot; Granted 2024
+                <span class="patent-id">US 11,915,053</span>
               </span>
             </li>
             <li>
@@ -2174,11 +2174,11 @@
               </span>
             </li>
             <li>
-              <span class="patent-title"><a href="https://patents.google.com/patent/US20220129322" target="_blank" rel="noopener">Interruption Predictions for Cloud Compute Instances</a></span>
+              <span class="patent-title"><a href="https://patents.google.com/patent/US11636164" target="_blank" rel="noopener">Search System for Providing Web Crawling Query Prioritization Based on Classification Operation Performance</a></span>
               <span class="patent-meta">
-                I. Schwartz, O. Muchnik, J. Cohen, K. McGrath, A. Shachar
-                &middot; 2022
-                <span class="patent-id">US 2022/0129322</span>
+                I. Guy, I. Schwartz, K. Radinsky
+                &middot; Granted 2023
+                <span class="patent-id">US 11,636,164</span>
               </span>
             </li>
           </ul>
