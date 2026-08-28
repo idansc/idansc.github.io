@@ -134,6 +134,13 @@ p { margin: 0 0 0.9rem; }
 .plain li { margin-bottom: 0.45rem; }
 .patent .pmeta { display: block; font-size: 0.88rem; color: var(--muted); }
 
+.talk { display: flex; gap: 1.15rem; margin-bottom: 1.4rem; align-items: flex-start; }
+.talk iframe { flex: 0 0 280px; width: 280px; aspect-ratio: 16 / 9; border: 1px solid var(--thumb-border); border-radius: 4px; background: #000; }
+.talk .tt { font-weight: 600; line-height: 1.4; }
+
+.mapwrap { margin-top: 0.5rem; }
+.mapwrap iframe { width: 100%; height: 300px; border: 1px solid var(--rule); border-radius: 6px; display: block; }
+
 footer { margin-top: 3.5rem; padding-top: 1rem; border-top: 1px solid var(--rule); font-size: 0.85rem; color: var(--muted); }
 
 @media (max-width: 640px) {
@@ -145,6 +152,8 @@ footer { margin-top: 3.5rem; padding-top: 1rem; border-top: 1px solid var(--rule
   .sel .media img, .sel .media video { width: 116px; }
   .news li { display: block; }
   .news .date { display: inline-block; }
+  .talk { display: block; }
+  .talk iframe { width: 100%; margin-bottom: 0.5rem; }
 }
 </style>
 </head>
@@ -439,11 +448,27 @@ footer { margin-top: 3.5rem; padding-top: 1rem; border-top: 1px solid var(--rule
 
 <section id="talks">
   <h2>Talks</h2>
-  <ul class="plain">
-    <li>Discriminative Models Can Make Generative Models Better <span class="muted">(in Hebrew)</span>, 2025 &nbsp;<span class="pl sans"><a href="https://www.youtube.com/watch?v=XwaEv0Wq06M">video</a></span></li>
-    <li>Multimodal Attention, Perception, Comprehension, 2024 &nbsp;<span class="pl sans"><a href="https://www.youtube.com/watch?v=pWq9MA7ZAuU">video</a></span></li>
-    <li>Attention Models for Vision and Language, 2019 &nbsp;<span class="pl sans"><a href="https://www.youtube.com/watch?v=hnI-t-txqCk">video</a></span></li>
-  </ul>
+  <div class="talk">
+    <iframe src="https://www.youtube-nocookie.com/embed/XwaEv0Wq06M" title="Discriminative Models Can Make Generative Models Better" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+    <div>
+      <div class="tt">Discriminative Models Can Make Generative Models Better <span class="muted">(in Hebrew)</span></div>
+      <p class="pa sans muted">2025 &middot; <a href="https://www.youtube.com/watch?v=XwaEv0Wq06M">watch on YouTube</a></p>
+    </div>
+  </div>
+  <div class="talk">
+    <iframe src="https://www.youtube-nocookie.com/embed/pWq9MA7ZAuU" title="Multimodal Attention, Perception, Comprehension" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+    <div>
+      <div class="tt">Multimodal Attention, Perception, Comprehension</div>
+      <p class="pa sans muted">2024 &middot; <a href="https://www.youtube.com/watch?v=pWq9MA7ZAuU">watch on YouTube</a></p>
+    </div>
+  </div>
+  <div class="talk">
+    <iframe src="https://www.youtube-nocookie.com/embed/hnI-t-txqCk" title="Attention Models for Vision and Language" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+    <div>
+      <div class="tt">Attention Models for Vision and Language</div>
+      <p class="pa sans muted">2019 &middot; <a href="https://www.youtube.com/watch?v=hnI-t-txqCk">watch on YouTube</a></p>
+    </div>
+  </div>
 </section>
 
 <section id="contact">
@@ -451,7 +476,10 @@ footer { margin-top: 3.5rem; padding-top: 1rem; border-top: 1px solid var(--rule
   <p><a href="mailto:idanschwartz@gmail.com">idanschwartz@gmail.com</a></p>
   <p>Department of Computer Science and Artificial Intelligence, Room 213<br>
   Building 503, Bar-Ilan University<br>
-  Ramat Gan, Israel &nbsp;<span class="pl sans"><a href="https://www.google.com/maps/search/?api=1&amp;query=Bar-Ilan+University+Building+503+Ramat+Gan">map</a></span></p>
+  Ramat Gan, Israel &nbsp;<span class="pl sans"><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Bar-Ilan+University+Building+503+Ramat+Gan">directions</a></span></p>
+  <div class="mapwrap">
+    <iframe src="https://www.google.com/maps?q=Bar-Ilan+University+Building+503,+Ramat+Gan,+Israel&amp;z=15&amp;output=embed" title="Bar-Ilan University, Building 503 map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
 </section>
 
 <footer>
