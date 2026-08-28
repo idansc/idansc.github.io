@@ -122,8 +122,8 @@ p { margin: 0 0 0.9rem; }
 .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem; }
 a.card { display: flex; flex-direction: column; border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; color: inherit; background: var(--bg); transition: border-color 0.16s ease, transform 0.16s ease, box-shadow 0.16s ease; }
 a.card:hover { border-color: var(--link); transform: translateY(-2px); box-shadow: var(--card-shadow); text-decoration: none; }
-.cimg { aspect-ratio: 16 / 10; background: #fff; border-bottom: 1px solid var(--rule); padding: 6px; overflow: hidden; }
-.cimg img, .cimg video { width: 100%; height: 100%; object-fit: contain; display: block; }
+.cimg { position: relative; height: 0; padding-bottom: 62.5%; background: #fff; border-bottom: 1px solid var(--rule); overflow: hidden; }
+.cimg img, .cimg video { position: absolute; top: 6px; left: 6px; width: calc(100% - 12px); height: calc(100% - 12px); object-fit: contain; }
 .cbody { padding: 0.8rem 0.95rem 1rem; }
 .cvenue { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--link); background: var(--pill); padding: 0.15rem 0.55rem; border-radius: 999px; margin-bottom: 0.5rem; }
 .ctitle { font-weight: 600; line-height: 1.35; font-size: 0.98rem; }
