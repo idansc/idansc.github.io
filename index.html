@@ -61,6 +61,8 @@
   --link: #17508f;
   --rule: #e7e4de;
   --thumb-border: #ddd9d2;
+  --pill: #e7eef8;
+  --card-shadow: 0 6px 18px rgba(23, 80, 143, 0.08);
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -70,6 +72,8 @@
     --link: #85aede;
     --rule: #2b2e33;
     --thumb-border: #33373d;
+    --pill: #1c2a44;
+    --card-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
   }
 }
 * { box-sizing: border-box; }
@@ -115,13 +119,16 @@ p { margin: 0 0 0.9rem; }
 .news li { margin-bottom: 0.55rem; display: flex; gap: 0.6rem; }
 .news .date { flex: 0 0 4.6rem; color: var(--muted); font-size: 0.85rem; padding-top: 0.22rem; }
 
-.sel { display: flex; gap: 1.15rem; margin-bottom: 1.5rem; }
-.sel .media { flex: 0 0 158px; }
-.sel .media img, .sel .media video { width: 158px; aspect-ratio: 4 / 3; object-fit: contain; display: block; border: 1px solid var(--thumb-border); border-radius: 4px; background: #fff; }
-.sel .pt { font-weight: 600; line-height: 1.4; }
-.sel .pa { font-size: 0.88rem; color: var(--muted); margin: 0.15rem 0 0; }
-.sel .pv { font-size: 0.88rem; margin: 0.1rem 0 0; }
-.sel .pd { font-size: 0.94rem; margin: 0.35rem 0 0; }
+.cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem; }
+a.card { display: flex; flex-direction: column; border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; color: inherit; background: var(--bg); transition: border-color 0.16s ease, transform 0.16s ease, box-shadow 0.16s ease; }
+a.card:hover { border-color: var(--link); transform: translateY(-2px); box-shadow: var(--card-shadow); text-decoration: none; }
+.cimg { aspect-ratio: 16 / 10; background: #fff; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--rule); padding: 6px; }
+.cimg img, .cimg video { max-width: 100%; max-height: 100%; object-fit: contain; }
+.cbody { padding: 0.8rem 0.95rem 1rem; }
+.cvenue { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--link); background: var(--pill); padding: 0.15rem 0.55rem; border-radius: 999px; margin-bottom: 0.5rem; }
+.ctitle { font-weight: 600; line-height: 1.35; font-size: 0.98rem; }
+.cauth { font-size: 0.8rem; color: var(--muted); margin: 0.35rem 0 0; line-height: 1.45; }
+.ctag { font-size: 0.86rem; margin: 0.4rem 0 0; line-height: 1.5; }
 
 .pubyear { color: var(--muted); font-weight: 600; font-size: 0.95rem; margin: 1.5rem 0 0.6rem; }
 .pub { margin-bottom: 0.9rem; }
@@ -147,9 +154,7 @@ footer { margin-top: 3.5rem; padding-top: 1rem; border-top: 1px solid var(--rule
   body { font-size: 16px; }
   header { flex-direction: column-reverse; gap: 1.4rem; }
   .portrait { width: 158px; }
-  .sel { gap: 0.9rem; }
-  .sel .media { flex-basis: 116px; }
-  .sel .media img, .sel .media video { width: 116px; }
+  .cards { grid-template-columns: 1fr; }
   .news li { display: block; }
   .news .date { display: inline-block; }
   .talk { display: block; }
@@ -210,77 +215,88 @@ footer { margin-top: 3.5rem; padding-top: 1rem; border-top: 1px solid var(--rule
 
 <section id="selected">
   <h2>Selected work</h2>
+  <div class="cards">
 
-  <div class="sel">
-    <div class="media"><video src="/img/papers/tempocontrol.mp4" poster="/img/papers/tempocontrol.jpg" autoplay loop muted playsinline preload="metadata" aria-label="TempoControl teaser"></video></div>
-    <div>
-      <div class="pt"><a href="https://shira-schiber.github.io/TempoControl/">TempoControl: Temporal Attention Guidance for Text-to-Video Models</a></div>
-      <p class="pa sans">S. Schiber, O. Lindenbaum, <b>I. Schwartz</b> &middot; CVPR 2026</p>
-      <p class="pd">Steers cross-attention so concepts appear at the right moment in a generated video, without retraining.</p>
-    </div>
-  </div>
+    <a class="card" href="https://shira-schiber.github.io/TempoControl/">
+      <div class="cimg"><video src="/img/papers/tempocontrol.mp4" poster="/img/papers/tempocontrol.jpg" autoplay loop muted playsinline preload="metadata" aria-label="TempoControl teaser"></video></div>
+      <div class="cbody">
+        <span class="cvenue sans">CVPR 2026</span>
+        <div class="ctitle">TempoControl: Temporal Attention Guidance for Text-to-Video Models</div>
+        <p class="cauth sans">S. Schiber, O. Lindenbaum, <b>I. Schwartz</b></p>
+        <p class="ctag">Steers cross-attention so concepts appear at the right moment in a generated video, without retraining.</p>
+      </div>
+    </a>
 
-  <div class="sel">
-    <div class="media"><img src="/img/papers/countopt.gif" alt="Detection-driven object count teaser" loading="lazy"></div>
-    <div>
-      <div class="pt"><a href="https://ozzafar.github.io/count_token/">Detection-Driven Object Count Optimization for Text-to-Image Diffusion Models</a></div>
-      <p class="pa sans">O. Zafar, Y. Cohen, L. Wolf, <b>I. Schwartz</b> &middot; WACV 2026</p>
-      <p class="pd">Optimizes a reusable counting token with detector feedback so generated images contain the requested number of objects.</p>
-    </div>
-  </div>
+    <a class="card" href="https://ozzafar.github.io/count_token/">
+      <div class="cimg"><img src="/img/papers/countopt.gif" alt="Detection-driven object count teaser" loading="lazy"></div>
+      <div class="cbody">
+        <span class="cvenue sans">WACV 2026</span>
+        <div class="ctitle">Detection-Driven Object Count Optimization for Text-to-Image Diffusion Models</div>
+        <p class="cauth sans">O. Zafar, Y. Cohen, L. Wolf, <b>I. Schwartz</b></p>
+        <p class="ctag">Optimizes a reusable counting token with detector feedback so generated images contain the requested number of objects.</p>
+      </div>
+    </a>
 
-  <div class="sel">
-    <div class="media"><img src="/img/papers/lami.jpg" alt="LaMI teaser" loading="lazy"></div>
-    <div>
-      <div class="pt"><a href="https://guyyariv.github.io/LaMI/">LaMI: Augmenting Large Language Models via Late Multi-Image Fusion</a></div>
-      <p class="pa sans">G. Yariv, <b>I. Schwartz</b>, Y. Adi, S. Benaim &middot; ACL 2026</p>
-      <p class="pd">Generates multiple images from the prompt and fuses them with a frozen LLM at the last layer, adding visual commonsense without retraining.</p>
-    </div>
-  </div>
+    <a class="card" href="https://guyyariv.github.io/LaMI/">
+      <div class="cimg"><img src="/img/papers/lami.jpg" alt="LaMI teaser" loading="lazy"></div>
+      <div class="cbody">
+        <span class="cvenue sans">ACL 2026</span>
+        <div class="ctitle">LaMI: Augmenting Large Language Models via Late Multi-Image Fusion</div>
+        <p class="cauth sans">G. Yariv, <b>I. Schwartz</b>, Y. Adi, S. Benaim</p>
+        <p class="ctag">Generates multiple images from the prompt and fuses them with a frozen LLM at the last layer, adding visual commonsense without retraining.</p>
+      </div>
+    </a>
 
-  <div class="sel">
-    <div class="media"><img src="/img/papers/tempotokens.jpg" alt="TempoTokens teaser" loading="lazy"></div>
-    <div>
-      <div class="pt"><a href="https://pages.cs.huji.ac.il/adiyoss-lab/TempoTokens/">Diverse and Aligned Audio-to-Video Generation via Text-to-Video Model Adaptation</a></div>
-      <p class="pa sans">G. Yariv, I. Gat, S. Benaim, L. Wolf, <b>I. Schwartz</b>, Y. Adi &middot; AAAI 2024</p>
-      <p class="pd">Maps audio into the input space of a frozen text-to-video model, generating videos temporally aligned with the sound.</p>
-    </div>
-  </div>
+    <a class="card" href="https://pages.cs.huji.ac.il/adiyoss-lab/TempoTokens/">
+      <div class="cimg"><img src="/img/papers/tempotokens.jpg" alt="TempoTokens teaser" loading="lazy"></div>
+      <div class="cbody">
+        <span class="cvenue sans">AAAI 2024</span>
+        <div class="ctitle">Diverse and Aligned Audio-to-Video Generation via Text-to-Video Model Adaptation</div>
+        <p class="cauth sans">G. Yariv, I. Gat, S. Benaim, L. Wolf, <b>I. Schwartz</b>, Y. Adi</p>
+        <p class="ctag">Maps audio into the input space of a frozen text-to-video model, generating videos temporally aligned with the sound.</p>
+      </div>
+    </a>
 
-  <div class="sel">
-    <div class="media"><img src="/img/papers/discriminative.gif" alt="Discriminative class tokens teaser" loading="lazy"></div>
-    <div>
-      <div class="pt"><a href="https://vesteinn.github.io/disco/">Discriminative Class Tokens for Text-to-Image Diffusion Models</a></div>
-      <p class="pa sans"><b>I. Schwartz</b>, V. Sn&aelig;bjarnarson, S. Benaim, H. Chefer, R. Cotterell, L. Wolf, S. Belongie &middot; ICCV 2023</p>
-      <p class="pd">Learns a single token from a classifier&rsquo;s gradient to disambiguate fine-grained classes.</p>
-    </div>
-  </div>
+    <a class="card" href="https://vesteinn.github.io/disco/">
+      <div class="cimg"><img src="/img/papers/discriminative.gif" alt="Discriminative class tokens teaser" loading="lazy"></div>
+      <div class="cbody">
+        <span class="cvenue sans">ICCV 2023</span>
+        <div class="ctitle">Discriminative Class Tokens for Text-to-Image Diffusion Models</div>
+        <p class="cauth sans"><b>I. Schwartz</b>, V. Sn&aelig;bjarnarson, S. Benaim, H. Chefer, R. Cotterell, L. Wolf, S. Belongie</p>
+        <p class="ctag">Learns a single token from a classifier&rsquo;s gradient to disambiguate fine-grained classes.</p>
+      </div>
+    </a>
 
-  <div class="sel">
-    <div class="media"><img src="/img/papers/zerocap.jpg" alt="ZeroCap teaser" loading="lazy"></div>
-    <div>
-      <div class="pt"><a href="/publication/tewel2022zerocap/">ZeroCap: Zero-Shot Image-to-Text Generation for Visual-Semantic Arithmetic</a></div>
-      <p class="pa sans">Y. Tewel, Y. Shalev, <b>I. Schwartz</b>, L. Wolf &middot; CVPR 2022</p>
-      <p class="pd">Combines a frozen LM with CLIP at inference time to caption images, and even does visual arithmetic like image &minus; word &plus; image.</p>
-    </div>
-  </div>
+    <a class="card" href="/publication/tewel2022zerocap/">
+      <div class="cimg"><img src="/img/papers/zerocap.jpg" alt="ZeroCap teaser" loading="lazy"></div>
+      <div class="cbody">
+        <span class="cvenue sans">CVPR 2022</span>
+        <div class="ctitle">ZeroCap: Zero-Shot Image-to-Text Generation for Visual-Semantic Arithmetic</div>
+        <p class="cauth sans">Y. Tewel, Y. Shalev, <b>I. Schwartz</b>, L. Wolf</p>
+        <p class="ctag">Combines a frozen LM with CLIP at inference time to caption images, and even does visual arithmetic like image &minus; word &plus; image.</p>
+      </div>
+    </a>
 
-  <div class="sel">
-    <div class="media"><img src="/img/papers/robustvit.png" alt="RobustViT teaser" loading="lazy"></div>
-    <div>
-      <div class="pt"><a href="/publication/chefer2022optimizing/">Optimizing Relevance Maps of Vision Transformers Improves Robustness</a></div>
-      <p class="pa sans">H. Chefer, <b>I. Schwartz</b>, L. Wolf &middot; NeurIPS 2022</p>
-      <p class="pd">Fine-tunes ViTs by shaping their relevance maps to focus on the foreground, with large robustness gains under distribution shift.</p>
-    </div>
-  </div>
+    <a class="card" href="/publication/chefer2022optimizing/">
+      <div class="cimg"><img src="/img/papers/robustvit.png" alt="RobustViT teaser" loading="lazy"></div>
+      <div class="cbody">
+        <span class="cvenue sans">NeurIPS 2022</span>
+        <div class="ctitle">Optimizing Relevance Maps of Vision Transformers Improves Robustness</div>
+        <p class="cauth sans">H. Chefer, <b>I. Schwartz</b>, L. Wolf</p>
+        <p class="ctag">Fine-tunes ViTs by shaping their relevance maps to focus on the foreground, with large robustness gains under distribution shift.</p>
+      </div>
+    </a>
 
-  <div class="sel">
-    <div class="media"><img src="/img/papers/fga.jpg" alt="Factor Graph Attention teaser" loading="lazy"></div>
-    <div>
-      <div class="pt"><a href="/publication/schwartz-fgacvpr-2019/">Factor Graph Attention</a></div>
-      <p class="pa sans"><b>I. Schwartz</b>, T. Hazan, A. G. Schwing &middot; CVPR 2019</p>
-      <p class="pd">A general attention mechanism that fuses any number of utilities (image, history, question, &hellip;) for visual dialog.</p>
-    </div>
+    <a class="card" href="/publication/schwartz-fgacvpr-2019/">
+      <div class="cimg"><img src="/img/papers/fga.jpg" alt="Factor Graph Attention teaser" loading="lazy"></div>
+      <div class="cbody">
+        <span class="cvenue sans">CVPR 2019</span>
+        <div class="ctitle">Factor Graph Attention</div>
+        <p class="cauth sans"><b>I. Schwartz</b>, T. Hazan, A. G. Schwing</p>
+        <p class="ctag">A general attention mechanism that fuses any number of utilities (image, history, question, &hellip;) for visual dialog.</p>
+      </div>
+    </a>
+
   </div>
 </section>
 
