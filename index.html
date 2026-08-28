@@ -1,2527 +1,462 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Idan Schwartz">
+<meta name="description" content="Assistant Professor of Computer Science at Bar-Ilan University, leading the Multimodal Lab. Research on multimodal generative models, attention, and inference-time methods.">
+<title>Idan Schwartz</title>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.3.1">
+<link rel="canonical" href="https://idansc.github.io/">
+<link rel="alternate" hreflang="en-us" href="https://idansc.github.io/">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="Idan Schwartz">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" type="image/png" href="/img/icon.png">
+<link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Idan Schwartz — Multimodal Lab, Bar-Ilan University">
+<meta property="og:description" content="Assistant Professor of Computer Science at Bar-Ilan University, leading the Multimodal Lab. Research on multimodal generative models, attention, and inference-time methods.">
+<meta property="og:url" content="https://idansc.github.io/">
+<meta property="og:image" content="https://idansc.github.io/img/idan.jpg">
+<meta property="og:site_name" content="Idan Schwartz">
+<meta property="twitter:card" content="summary">
+<meta property="twitter:site" content="@idansc">
+<meta property="twitter:image" content="https://idansc.github.io/img/idan.jpg">
 
-  
-  
-  
-  
-  
-    
-    
-    
-  
-  
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Idan Schwartz",
+  "jobTitle": "Assistant Professor",
+  "image": "https://idansc.github.io/img/idan.jpg",
+  "url": "https://idansc.github.io/",
+  "worksFor": { "@type": "Organization", "name": "Bar-Ilan University" },
+  "alumniOf": [
+    { "@type": "Organization", "name": "Technion — Israel Institute of Technology" },
+    { "@type": "Organization", "name": "Tel Aviv University" }
+  ],
+  "sameAs": [
+    "https://scholar.google.com/citations?user=5V-yJT4AAAAJ",
+    "https://github.com/idansc",
+    "https://twitter.com/idansc"
+  ]
+}
+</script>
 
-  <meta name="author" content="Idan Schwartz">
-
-  
-  
-  
-    
-  
-  <meta name="description" content="Assistant Professor at Bar-Ilan University, leading the Multimodal Lab. Research on multimodal generative models, attention, and inference-time methods.">
-
-  
-  <link rel="alternate" hreflang="en-us" href="https://idansc.github.io/">
-
-  
-
-
-  
-
-  
-  
-  
-  <meta name="theme-color" content="#2962ff">
-  
-
-  
-  
-  
-  
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
-
-    
-    
-    
-      
-    
-    
-      
-      
-        
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
-        
-      
-    
-
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin="anonymous">
-    
-
-    
-
-  
-
-  
-  
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
-  
-
-  
-  
-  
-  <link rel="stylesheet" href="/css/academic.min.edd7323ad0a429439a75febefca5805e.css">
-
-  
-
-  
-  
-    <script>
-      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', 'G-0G7KF9T2ZC', 'auto');
-      
-      ga('require', 'eventTracker');
-      ga('require', 'outboundLinkTracker');
-      ga('require', 'urlChangeTracker');
-      ga('send', 'pageview');
-    </script>
-    <script async src="//www.google-analytics.com/analytics.js"></script>
-    
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
-    
-  
-  
-
-  
-  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Idan Schwartz">
-  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Idan Schwartz">
-  
-
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="icon" type="image/png" href="/img/icon.png">
-  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
-
-  <link rel="canonical" href="https://idansc.github.io/">
-
-  
-  
-  
-  
-    
-    
-  
-  <meta property="twitter:card" content="summary_large_image">
-  
-  <meta property="twitter:site" content="@idansc">
-  <meta property="twitter:creator" content="@idansc">
-  
-  <meta property="og:type" content="profile">
-  <meta property="profile:first_name" content="Idan">
-  <meta property="profile:last_name" content="Schwartz">
-  <meta property="og:site_name" content="Idan Schwartz">
-  <meta property="og:url" content="https://idansc.github.io/">
-  <meta property="og:title" content="Idan Schwartz — Multimodal Lab, Bar-Ilan University">
-  <meta property="og:description" content="Assistant Professor at Bar-Ilan University, leading the Multimodal Lab. Research on multimodal generative models, attention, and inference-time methods."><meta property="og:image" content="https://idansc.github.io/img/icon-192.png">
-  <meta property="og:locale" content="en-us">
-  
-  <meta property="og:updated_time" content="2023-11-20T00:00:00&#43;00:00">
-  
-
-  
-
-  
-
-  <title>Idan Schwartz</title>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Idan Schwartz",
-    "givenName": "Idan",
-    "familyName": "Schwartz",
-    "url": "https://idansc.github.io/",
-    "image": "https://idansc.github.io/authors/admin/avatar_hu7097852a9792cfa9dd1488c658a78af9_390754_250x250_fill_lanczos_center_3.png",
-    "jobTitle": "Assistant Professor",
-    "worksFor": {
-      "@type": "CollegeOrUniversity",
-      "name": "Bar-Ilan University",
-      "url": "https://www.biu.ac.il/"
-    },
-    "affiliation": {
-      "@type": "Organization",
-      "name": "The Multimodal Lab, Bar-Ilan University"
-    },
-    "knowsAbout": [
-      "Multimodal learning",
-      "Generative models",
-      "Attention mechanisms",
-      "Vision-and-language",
-      "Inference-time methods"
-    ],
-    "sameAs": [
-      "https://scholar.google.com/citations?user=5V-yJT4AAAAJ&hl=en",
-      "https://github.com/idansc",
-      "https://twitter.com/idansc",
-      "https://www.quora.com/profile/Idan-Schwartz"
-    ]
-  }
-  </script>
-
-</head>
-<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71" >
-  <aside class="search-results" id="search">
-  <div class="container">
-    <section class="search-header">
-
-      <div class="row no-gutters justify-content-between mb-3">
-        <div class="col-6">
-          <h1>Search</h1>
-        </div>
-        <div class="col-6 col-search-close">
-          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
-        </div>
-      </div>
-
-      <div id="search-box">
-        
-        
-        
-      </div>
-
-    </section>
-    <section class="section-search-results">
-
-      <div id="search-hits">
-        
-      </div>
-
-    </section>
-  </div>
-</aside>
-
-
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0G7KF9T2ZC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0G7KF9T2ZC');
+</script>
 
 <style>
-  body.dark .navbar-light {
-    background: #1c1e24 !important;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.4) !important;
+:root {
+  --bg: #fcfcfa;
+  --text: #1d1f21;
+  --muted: #676e78;
+  --link: #17508f;
+  --rule: #e7e4de;
+  --thumb-border: #ddd9d2;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #16181b;
+    --text: #d8d9db;
+    --muted: #969ea8;
+    --link: #85aede;
+    --rule: #2b2e33;
+    --thumb-border: #33373d;
   }
-  body.dark .navbar-light .navbar-brand,
-  body.dark .navbar-light .navbar-nav .nav-link {
-    color: #f8f8f2 !important;
-  }
-  body.dark .navbar-light .navbar-nav .nav-link:hover,
-  body.dark .navbar-light .navbar-nav .nav-link:focus,
-  body.dark .navbar-light .navbar-nav > li.nav-item > a.active {
-    color: #8aa4ff !important;
-  }
-  .network-icon .x-icon {
-    width: 1.55rem;
-    height: 1.55rem;
-    vertical-align: -0.18em;
-  }
-  body.dark .navbar-light .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(248,248,242,0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.62 Charter, "Iowan Old Style", Georgia, "Times New Roman", serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.wrap { max-width: 46rem; margin: 0 auto; padding: 3.2rem 1.4rem 4rem; }
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+
+header { display: flex; gap: 2.4rem; align-items: flex-start; justify-content: space-between; }
+header .intro { flex: 1 1 auto; }
+h1 { font-size: 2.05rem; font-weight: 600; letter-spacing: -0.01em; margin: 0 0 0.45rem; }
+.role { margin: 0 0 0.15rem; }
+.role .muted { color: var(--muted); }
+.idlinks { margin-top: 0.9rem; font-size: 0.92rem; }
+.idlinks a { white-space: nowrap; }
+.idlinks .sep { color: var(--muted); margin: 0 0.25rem; }
+.portrait { flex: 0 0 176px; width: 176px; height: auto; border-radius: 6px; display: block; }
+
+nav { margin-top: 1.9rem; padding-top: 0.9rem; border-top: 1px solid var(--rule); font-size: 0.9rem; color: var(--muted); }
+nav a { color: var(--muted); }
+nav a:hover { color: var(--link); }
+nav .sep { margin: 0 0.35rem; }
+
+section { margin-top: 2.4rem; }
+h2 { font-size: 1.32rem; font-weight: 600; margin: 0 0 1rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); }
+h3 { font-size: 1.02rem; font-weight: 600; margin: 1.5rem 0 0.55rem; }
+p { margin: 0 0 0.9rem; }
+.muted { color: var(--muted); }
+
+.edu { list-style: none; margin: 0.4rem 0 0; padding: 0; font-size: 0.95rem; }
+.edu li { margin-bottom: 0.2rem; }
+
+.news { list-style: none; margin: 0; padding: 0; }
+.news li { margin-bottom: 0.55rem; display: flex; gap: 0.6rem; }
+.news .date { flex: 0 0 4.6rem; color: var(--muted); font-size: 0.85rem; padding-top: 0.22rem; }
+
+.sel { display: flex; gap: 1.15rem; margin-bottom: 1.5rem; }
+.sel .media { flex: 0 0 158px; }
+.sel .media img, .sel .media video { width: 158px; aspect-ratio: 4 / 3; object-fit: contain; display: block; border: 1px solid var(--thumb-border); border-radius: 4px; background: #fff; }
+.sel .pt { font-weight: 600; line-height: 1.4; }
+.sel .pa { font-size: 0.88rem; color: var(--muted); margin: 0.15rem 0 0; }
+.sel .pv { font-size: 0.88rem; margin: 0.1rem 0 0; }
+.sel .pd { font-size: 0.94rem; margin: 0.35rem 0 0; }
+
+.pubyear { color: var(--muted); font-weight: 600; font-size: 0.95rem; margin: 1.5rem 0 0.6rem; }
+.pub { margin-bottom: 0.9rem; }
+.pub .pa { font-size: 0.88rem; color: var(--muted); }
+.pub .pv { font-style: italic; }
+.pub .pl { font-size: 0.85rem; white-space: nowrap; }
+.pub b { font-weight: 600; color: var(--text); }
+
+.plain { list-style: none; margin: 0; padding: 0; }
+.plain li { margin-bottom: 0.45rem; }
+.patent .pmeta { display: block; font-size: 0.88rem; color: var(--muted); }
+
+footer { margin-top: 3.5rem; padding-top: 1rem; border-top: 1px solid var(--rule); font-size: 0.85rem; color: var(--muted); }
+
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  header { flex-direction: column-reverse; gap: 1.4rem; }
+  .portrait { width: 158px; }
+  .sel { gap: 0.9rem; }
+  .sel .media { flex-basis: 116px; }
+  .sel .media img, .sel .media video { width: 116px; }
+  .news li { display: block; }
+  .news .date { display: inline-block; }
+}
 </style>
+</head>
+<body>
+<div class="wrap">
 
-<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
-  <div class="container">
-
-    
-      <a class="navbar-brand" href="/">Idan Schwartz</a>
-      
-      <button type="button" class="navbar-toggler" data-toggle="collapse"
-              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-        <span><i class="fas fa-bars"></i></span>
-      </button>
-      
-
-    
-    <div class="collapse navbar-collapse" id="navbar">
-
-      
-      
-      <ul class="navbar-nav ml-auto">
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-          
-          
-          
-            
-          
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#about" data-target="#about">
-            
-            <span>Home</span>
-            
-          </a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-          
-          
-          
-            
-          
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#lab" data-target="#lab">
-
-            <span>Lab</span>
-
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#news" data-target="#news">
-
-            <span>News</span>
-
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#publications" data-target="#publications">
-            
-            <span>Publications</span>
-            
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#patents" data-target="#patents">
-            <span>Patents</span>
-          </a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-          
-          
-          
-            
-          
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#contact" data-target="#contact">
-            
-            <span>Contact</span>
-            
-          </a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-
-        
-
-      
-
-        
-
-        
-
-        
-
-        
-        <li class="nav-item">
-          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
-        </li>
-        
-
-      </ul>
-
-    </div>
+<header>
+  <div class="intro">
+    <h1>Idan Schwartz</h1>
+    <p class="role">Assistant Professor, Department of Computer Science<br>Bar-Ilan University</p>
+    <p class="role muted">Head of the <a href="#lab">Multimodal Lab</a></p>
+    <p class="idlinks sans">
+      <a href="mailto:idanschwartz@gmail.com">Email</a><span class="sep">·</span>
+      <a href="/files/cv.pdf">CV</a><span class="sep">·</span>
+      <a href="https://scholar.google.com/citations?user=5V-yJT4AAAAJ&amp;hl=en">Google Scholar</a><span class="sep">·</span>
+      <a href="https://github.com/idansc">GitHub</a><span class="sep">·</span>
+      <a href="https://twitter.com/idansc">Twitter</a>
+    </p>
   </div>
+  <img class="portrait" src="/img/idan.jpg" alt="Idan Schwartz" width="640" height="800">
+</header>
+
+<nav class="sans">
+  <a href="#news">News</a><span class="sep">·</span>
+  <a href="#selected">Selected work</a><span class="sep">·</span>
+  <a href="#publications">Publications</a><span class="sep">·</span>
+  <a href="#lab">Lab</a><span class="sep">·</span>
+  <a href="#patents">Patents</a><span class="sep">·</span>
+  <a href="#talks">Talks</a><span class="sep">·</span>
+  <a href="#contact">Contact</a>
 </nav>
 
+<section id="about">
+  <p style="margin-top:1.6rem">I work on multimodal learning, mostly generative: aligning modalities such as vision, language, and audio. I am also interested in what cognitive science can tell us about deep learning &mdash; perception, attention, and comprehension in multimodal models.</p>
+  <p>Before Bar-Ilan, I was a postdoc with Prof. Lior Wolf at Tel Aviv University. I received my PhD in Computer Science from the Technion, co-advised by Prof. Tamir Hazan and Prof. Alexander G. Schwing (UIUC); my thesis was on cognitive models in deep learning (<a href="/files/thesis_compress.pdf">pdf</a>).</p>
+  <p>In industry, I have worked on vision and language for eBay&rsquo;s catalog, meeting insights in Microsoft&rsquo;s assistant, and cloud workload prediction at Spot. I also serve as Chief Scientist at Aigency.ai.</p>
+  <ul class="edu muted">
+    <li>Postdoc, Tel Aviv University, 2023</li>
+    <li>PhD in Computer Science, Technion &amp; UIUC, 2022</li>
+    <li>BSc in Computer Science, Technion, 2015</li>
+  </ul>
+</section>
 
+<section id="news">
+  <h2>News</h2>
+  <ul class="news">
+    <li><span class="date sans">Apr 2026</span><span><em>LaMI: Augmenting Large Language Models via Late Multi-Image Fusion</em> accepted to ACL 2026 (main conference).</span></li>
+    <li><span class="date sans">Apr 2026</span><span><em>TempoControl: Temporal Attention Guidance for Text-to-Video Models</em> accepted to CVPR 2026.</span></li>
+    <li><span class="date sans">Apr 2026</span><span><em>Single Image Iterative Subject-driven Generation and Editing</em> accepted to the P13N Workshop at CVPR 2026.</span></li>
+    <li><span class="date sans">Mar 2026</span><span><em>Detection-Driven Object Count Optimization for Text-to-Image Diffusion Models</em> presented at WACV 2026.</span></li>
+    <li><span class="date sans">2024</span><span>Joined Bar-Ilan University as an Assistant Professor and founded the <a href="#lab">Multimodal Lab</a>.</span></li>
+  </ul>
+</section>
 
-<span class="js-widget-page d-none"></span>
+<section id="selected">
+  <h2>Selected work</h2>
 
-
-
-
-  
-
-
-
-
-
-
-
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-
-  <section id="about" class="home-section wg-about   "  >
-    <div class="container">
-      
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-<div class="row" itemprop="author" itemscope itemtype="http://schema.org/Person" itemref="person-email">
-  <div class="col-12 col-lg-4">
-    <div id="profile">
-
-      
-      
-      <img class="portrait" src="/authors/admin/avatar_hu7097852a9792cfa9dd1488c658a78af9_390754_250x250_fill_lanczos_center_3.png" itemprop="image" alt="Avatar">
-      
-
-      <div class="portrait-title">
-        <h2 itemprop="name">Idan Schwartz</h2>
-        <h3 itemprop="jobTitle">Assistant Professor</h3>
-
-        
-        <h3 itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
-          
-          <span itemprop="name">Bar-Ilan University</span>
-          
-        </h3>
-        
-      </div>
-
-      <link itemprop="url" href="">
-
-      <ul class="network-icon">
-        
-        
-        
-        
-        
-        
-        
-        
-          
-        
-        <li>
-          <a itemprop="sameAs" href="https://scholar.google.com/citations?user=5V-yJT4AAAAJ&amp;hl=en" target="_blank" rel="noopener" aria-label="Google Scholar profile">
-            <i class="ai ai-google-scholar big-icon" aria-hidden="true"></i>
-          </a>
-        </li>
-        
-        
-        
-        
-          
-        
-        
-        
-        
-        
-          
-        
-        <li>
-          <a itemprop="sameAs" href="https://github.com/idansc" target="_blank" rel="noopener" aria-label="GitHub profile">
-            <i class="fab fa-github big-icon" aria-hidden="true"></i>
-          </a>
-        </li>
-        
-        
-        
-        
-          
-        
-        
-        
-        
-        
-          
-        
-        <li>
-          <a itemprop="sameAs" href="https://www.quora.com/profile/Idan-Schwartz" target="_blank" rel="noopener" aria-label="Quora profile">
-            <i class="fab fa-quora big-icon" aria-hidden="true"></i>
-          </a>
-        </li>
-        
-        
-        
-        
-          
-        
-        
-        
-        
-        
-          
-        
-        <li>
-          <a itemprop="sameAs" href="https://twitter.com/idansc" target="_blank" rel="noopener" aria-label="X (Twitter) profile" class="x-link">
-            <svg class="big-icon x-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1227" aria-hidden="true" focusable="false">
-              <path fill="currentColor" d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894L144.011 79.694h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z"/>
-            </svg>
-          </a>
-        </li>
-        
-      </ul>
-
+  <div class="sel">
+    <div class="media"><video src="/img/papers/tempocontrol.mp4" poster="/img/papers/tempocontrol.jpg" autoplay loop muted playsinline preload="metadata" aria-label="TempoControl teaser"></video></div>
+    <div>
+      <div class="pt"><a href="https://shira-schiber.github.io/TempoControl/">TempoControl: Temporal Attention Guidance for Text-to-Video Models</a></div>
+      <p class="pa sans">S. Schiber, O. Lindenbaum, <b>I. Schwartz</b> &middot; CVPR 2026</p>
+      <p class="pd">Steers cross-attention so concepts appear at the right moment in a generated video, without retraining.</p>
     </div>
   </div>
-  <div class="col-12 col-lg-8" itemprop="description">
 
-    
-    <h1>Research &amp; Bio</h1>
-
-    <p>I'm an Assistant Professor at Bar-Ilan University, leading the Multimodal Lab.</p>
-    <p>My research focuses on multimodal problems, primarily generative, with challenges including modal alignment and efficient inference-time solutions.</p>
-    <p>I also have a strong interest in connecting ideas from cognitive science decision making to deep learning concepts, such as model perceptiveness, representation as comprehension, attention, and programming as system 2 problem solving.</p>
-    <p>I completed my postdoc with Prof. Lior Wolf at Tel Aviv University. Before that, I earned my PhD in Computer Science from the Technion, under the supervision of Prof. Tamir Hazan and Prof. Alexander G. Schwing from UIUC. My thesis focused on Cognitive Models in Deep Learning. You can find my thesis <a href="/files/thesis_compress.pdf" target="_blank">here</a>.</p>
-    <p>My experience as a researcher in industry includes work on eBay's catalog (vision and language), Microsoft's Assistant (meeting insights, transcript-based), and at Spot for cloud workload optimization platform (time-series prediction). I currently serve as Chief Scientist at Aigency.ai, where I'm helping revolutionize the internet in the age of intelligent agents.</p>
-
-
-    <div class="row">
-
-      
-      <div class="col-md-5">
-        <h3>Interests</h3>
-        <ul class="ul-interests">
-          
-          <li>Artificial Intelligence &amp; Cognition</li>
-          
-          <li>Attention Models</li>
-          
-          <li>Multimodal Learning</li>
-          
-          <li>Computer Vision</li>
-          
-          <li>Natural Language Processing</li>
-          
-        </ul>
-      </div>
-      
-
-      
-      <div class="col-md-7">
-        <h3>Education</h3>
-        <ul class="ul-edu fa-ul">
-          
-          <li>
-            <i class="fa-li fas fa-graduation-cap"></i>
-            <div class="description">
-              <p class="course">Postdoc in Computer Science, 2023</p>
-              <p class="institution">Tel-Aviv University</p>
-            </div>
-          </li>
-          
-          <li>
-            <i class="fa-li fas fa-graduation-cap"></i>
-            <div class="description">
-              <p class="course">PhD in Computer Science, 2022</p>
-              <p class="institution">Technion</p>
-            </div>
-          </li>
-          
-          <li>
-            <i class="fa-li fas fa-graduation-cap"></i>
-            <div class="description">
-              <p class="course">BSc in Computer Science, 2015</p>
-              <p class="institution">Technion</p>
-            </div>
-          </li>
-          
-        </ul>
-      </div>
-      
-
+  <div class="sel">
+    <div class="media"><img src="/img/papers/countopt.gif" alt="Detection-driven object count teaser" loading="lazy"></div>
+    <div>
+      <div class="pt"><a href="https://ozzafar.github.io/count_token/">Detection-Driven Object Count Optimization for Text-to-Image Diffusion Models</a></div>
+      <p class="pa sans">O. Zafar, Y. Cohen, L. Wolf, <b>I. Schwartz</b> &middot; WACV 2026</p>
+      <p class="pd">Optimizes a reusable counting token with detector feedback so generated images contain the requested number of objects.</p>
     </div>
   </div>
-</div>
 
+  <div class="sel">
+    <div class="media"><img src="/img/papers/lami.jpg" alt="LaMI teaser" loading="lazy"></div>
+    <div>
+      <div class="pt"><a href="https://guyyariv.github.io/LaMI/">LaMI: Augmenting Large Language Models via Late Multi-Image Fusion</a></div>
+      <p class="pa sans">G. Yariv, <b>I. Schwartz</b>, Y. Adi, S. Benaim &middot; ACL 2026</p>
+      <p class="pd">Generates multiple images from the prompt and fuses them with a frozen LLM at the last layer &mdash; visual commonsense without retraining.</p>
     </div>
-  </section>
-
-  <section id="lab" class="home-section">
-    <div class="container">
-
-      <style>
-        .lab-list { margin: 0 0 1rem 0; padding-left: 1.1rem; }
-        .lab-list li { padding: 0.2rem 0; }
-        .lab-list .joint { color: #6c757d; }
-        body.dark .lab-list .joint { color: #b6bcc9; }
-        .lab-list .paper { color: #6c757d; }
-        body.dark .lab-list .paper { color: #b6bcc9; }
-        .lab-list .paper a { color: inherit; text-decoration: underline; text-decoration-color: rgba(108,117,125,0.35); }
-        .lab-list .paper a:hover { color: #2962ff; text-decoration-color: #2962ff; }
-        body.dark .lab-list .paper a:hover { color: #8aa4ff; text-decoration-color: #8aa4ff; }
-      </style>
-
-      <div class="row">
-        <div class="col-12 col-lg-4 section-heading">
-          <h1>The Multimodal Lab</h1>
-        </div>
-        <div class="col-12 col-lg-8">
-
-          <h3>PhD Students</h3>
-          <ul class="lab-list">
-            <li>Ben Fishman <span class="joint">(joint with Gal Chechik)</span></li>
-          </ul>
-
-          <h3>MSc Students</h3>
-          <ul class="lab-list">
-            <li>Gilad Carmel</li>
-            <li>Mark Vexler</li>
-            <li>Uriel Dolev <span class="joint">(joint with Yoav Goldberg)</span></li>
-            <li>Amit Ronen</li>
-            <li>Aviv Weidenfeld</li>
-            <li>Omri Keren</li>
-            <li>Binyamin Ramati</li>
-            <li>Yona Orunov</li>
-            <li>Yuval Cohen</li>
-          </ul>
-
-          <h3>Alumni</h3>
-          <ul class="lab-list">
-            <li>
-              Shira Schiber <span class="joint">(joint with Ofir Lindenbaum)</span>
-              &mdash; <span class="paper"><a href="https://arxiv.org/abs/2510.02226" target="_blank" rel="noopener"><em>TempoControl</em>, CVPR 2026</a></span>
-            </li>
-            <li>
-              Yair Shpitzer <span class="joint">(joint with Gal Chechik)</span>
-              &mdash; <span class="paper"><a href="https://arxiv.org/abs/2503.16025" target="_blank" rel="noopener"><em>SISO</em>, CVPR 2026 Workshop</a></span>
-            </li>
-          </ul>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-
-  <section id="news" class="home-section"  >
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-lg-4 section-heading">
-          <h1>News</h1>
-        </div>
-        <div class="col-12 col-lg-8">
-          <ul class="news-list" style="list-style: none; padding-left: 0;">
-            <li style="margin-bottom: 0.85rem;">
-              <span style="display: inline-block; min-width: 5.5rem; font-weight: 600; color: #2962ff;">Apr 2026</span>
-              <span><em>LaMI: Augmenting Large Language Models via Late Multi-Image Fusion</em> accepted to <strong>ACL 2026 (Main Conference)</strong>.</span>
-            </li>
-            <li style="margin-bottom: 0.85rem;">
-              <span style="display: inline-block; min-width: 5.5rem; font-weight: 600; color: #2962ff;">Apr 2026</span>
-              <span><em>Single Image Iterative Subject-driven Generation and Editing</em> accepted to the <strong>P13N Workshop, CVPR 2026</strong>.</span>
-            </li>
-            <li style="margin-bottom: 0.85rem;">
-              <span style="display: inline-block; min-width: 5.5rem; font-weight: 600; color: #2962ff;">Apr 2026</span>
-              <span><em>TempoControl: Temporal Attention Guidance for Text-to-Video Models</em> accepted to <strong>CVPR 2026</strong>.</span>
-            </li>
-            <li style="margin-bottom: 0.85rem;">
-              <span style="display: inline-block; min-width: 5.5rem; font-weight: 600; color: #2962ff;">Mar 2026</span>
-              <span><em>Detection-Driven Object Count Optimization for Text-to-Image Diffusion Models</em> presented at <strong>WACV 2026</strong>.</span>
-            </li>
-            <li style="margin-bottom: 0.85rem;">
-              <span style="display: inline-block; min-width: 5.5rem; font-weight: 600; color: #2962ff;">2024</span>
-              <span>Started as <strong>Assistant Professor</strong> at Bar-Ilan University and founded the <a href="#lab">Multimodal Lab</a>.</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="featured" class="home-section wg-featured highlights-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-lg-4 section-heading">
-          <h1>Research Highlights</h1>
-        </div>
-        <div class="col-12 col-lg-8">
-
-          <style>
-            .highlights-section { background: linear-gradient(180deg, #fafbfc 0%, #ffffff 100%); }
-            body.dark .highlights-section { background: linear-gradient(180deg, #1c1e24 0%, #282a36 100%); }
-            .section-subtitle { color: #6c757d; margin-top: 0.5rem; }
-            body.dark .section-subtitle { color: #a8b0bb; }
-
-            .highlights-section .row .row { display: flex; flex-wrap: wrap; }
-            .highlights-section .row .row > [class*="col-"] { display: flex; }
-            .highlight-card {
-              display: flex;
-              flex-direction: column;
-              width: 100%;
-              border-radius: 12px;
-              overflow: hidden;
-              background: #ffffff;
-              box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-              transition: transform 0.18s ease, box-shadow 0.18s ease;
-              text-decoration: none !important;
-              color: inherit !important;
-              height: 100%;
-              border: 1px solid #eef0f3;
-            }
-            .highlight-card:hover {
-              transform: translateY(-3px);
-              box-shadow: 0 10px 24px rgba(41, 98, 255, 0.10), 0 4px 8px rgba(0,0,0,0.06);
-              border-color: #d6e1ff;
-            }
-            .highlight-card .hc-img-wrap {
-              width: 100%;
-              aspect-ratio: 16 / 9;
-              background: #f4f6f9;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              overflow: hidden;
-              padding: 6px;
-            }
-            .highlight-card .hc-img-wrap img,
-            .highlight-card .hc-img-wrap video {
-              max-width: 100%;
-              max-height: 100%;
-              width: auto;
-              height: auto;
-              object-fit: contain;
-              transition: transform 0.4s ease;
-            }
-            .highlight-card:hover .hc-img-wrap img,
-            .highlight-card:hover .hc-img-wrap video { transform: scale(1.03); }
-            .highlight-card .hc-body {
-              padding: 0.85rem 1rem 1rem 1rem;
-              display: flex;
-              flex-direction: column;
-              flex: 1 1 auto;
-            }
-            .highlight-card .hc-venue {
-              display: inline-block;
-              font-size: 0.72rem;
-              font-weight: 700;
-              letter-spacing: 0.05em;
-              text-transform: uppercase;
-              color: #2962ff;
-              background: #eaf0ff;
-              padding: 0.18rem 0.5rem;
-              border-radius: 999px;
-              margin-bottom: 0.45rem;
-            }
-            .highlight-card .hc-title {
-              font-size: 1.02rem;
-              font-weight: 600;
-              line-height: 1.35;
-              margin: 0 0 0.35rem 0;
-              color: #1a1a1a;
-            }
-            .highlight-card .hc-authors {
-              font-size: 0.85rem;
-              color: #6c757d;
-              margin: 0;
-              line-height: 1.4;
-            }
-            .highlight-card .hc-tagline {
-              font-size: 0.85rem;
-              color: #495057;
-              margin: 0.45rem 0 0 0;
-              line-height: 1.45;
-            }
-            body.dark .highlight-card {
-              background: #2f3240;
-              border-color: #3a3e4d;
-            }
-            body.dark .highlight-card:hover {
-              border-color: #4a5680;
-              box-shadow: 0 10px 24px rgba(108, 142, 255, 0.18), 0 4px 8px rgba(0,0,0,0.3);
-            }
-            body.dark .highlight-card .hc-img-wrap { background: #1f2128; }
-            body.dark .highlight-card .hc-title { color: #f8f8f2; }
-            body.dark .highlight-card .hc-authors { color: #b6bcc9; }
-            body.dark .highlight-card .hc-tagline { color: #d4d8e0; }
-            body.dark .highlight-card .hc-venue { background: #1b2647; color: #8aa4ff; }
-          </style>
-
-          <div class="row">
-
-            <div class="col-md-6 mb-4">
-              <a class="highlight-card" href="https://arxiv.org/abs/2510.02226" target="_blank" rel="noopener">
-                <div class="hc-img-wrap"><video src="/img/papers/tempocontrol.mp4?v=2" poster="/img/papers/tempocontrol.jpg" autoplay loop muted playsinline preload="metadata" aria-label="TempoControl teaser"></video></div>
-                <div class="hc-body">
-                  <span class="hc-venue">CVPR 2026</span>
-                  <h3 class="hc-title">TempoControl: Temporal Attention Guidance for Text-to-Video Models</h3>
-                  <p class="hc-authors">S. Schiber, O. Lindenbaum, I. Schwartz</p>
-                  <p class="hc-tagline">Steers cross-attention so concepts appear at the right moment in a generated video &mdash; without retraining.</p>
-                </div>
-              </a>
-            </div>
-
-            <div class="col-md-6 mb-4">
-              <a class="highlight-card" href="https://ozzafar.github.io/count_token/" target="_blank" rel="noopener">
-                <div class="hc-img-wrap"><img src="/img/papers/countopt.gif?v=2" alt="Detection-Driven Object Count teaser"></div>
-                <div class="hc-body">
-                  <span class="hc-venue">WACV 2026</span>
-                  <h3 class="hc-title">Detection-Driven Object Count Optimization for Text-to-Image Diffusion Models</h3>
-                  <p class="hc-authors">O. Zafar, Y. Cohen, L. Wolf, I. Schwartz</p>
-                  <p class="hc-tagline">Optimizes a reusable counting token using detector feedback so generated images contain the requested number of objects.</p>
-                </div>
-              </a>
-            </div>
-
-            <div class="col-md-6 mb-4">
-              <a class="highlight-card" href="https://arxiv.org/abs/2406.13621" target="_blank" rel="noopener">
-                <div class="hc-img-wrap"><img src="/img/papers/lami.jpg" alt="LaMI teaser"></div>
-                <div class="hc-body">
-                  <span class="hc-venue">ACL 2026</span>
-                  <h3 class="hc-title">LaMI: Augmenting Large Language Models via Late Multi-Image Fusion</h3>
-                  <p class="hc-authors">G. Yariv, I. Schwartz, Y. Adi, S. Benaim</p>
-                  <p class="hc-tagline">Generates multiple images from the prompt and fuses them with a frozen LLM at the last layer &mdash; visual commonsense without retraining the model.</p>
-                </div>
-              </a>
-            </div>
-
-            <div class="col-md-6 mb-4">
-              <a class="highlight-card" href="https://pages.cs.huji.ac.il/adiyoss-lab/TempoTokens/" target="_blank" rel="noopener">
-                <div class="hc-img-wrap"><img src="/img/papers/tempotokens.jpg" alt="TempoTokens teaser"></div>
-                <div class="hc-body">
-                  <span class="hc-venue">AAAI 2024</span>
-                  <h3 class="hc-title">Diverse and Aligned Audio-to-Video Generation via Text-to-Video Model Adaptation</h3>
-                  <p class="hc-authors">G. Yariv, I. Gat, S. Benaim, L. Wolf, I. Schwartz, Y. Adi</p>
-                  <p class="hc-tagline">Maps audio into the input space of a frozen text-to-video model &mdash; generates videos that stay temporally aligned with the sound.</p>
-                </div>
-              </a>
-            </div>
-
-            <div class="col-md-6 mb-4">
-              <a class="highlight-card" href="https://vesteinn.github.io/disco/" target="_blank" rel="noopener">
-                <div class="hc-img-wrap"><img src="/img/papers/discriminative.gif?v=2" alt="Discriminative Class Tokens teaser"></div>
-                <div class="hc-body">
-                  <span class="hc-venue">ICCV 2023</span>
-                  <h3 class="hc-title">Discriminative Class Tokens for Text-to-Image Diffusion Models</h3>
-                  <p class="hc-authors">I. Schwartz, V. Snæbjarnarson, S. Benaim, H. Chefer, R. Cotterell, L. Wolf, S. Belongie</p>
-                  <p class="hc-tagline">Learns a single token from a classifier&rsquo;s gradient to disambiguate fine-grained classes &mdash; sharper, more accurate generations.</p>
-                </div>
-              </a>
-            </div>
-
-            <div class="col-md-6 mb-4">
-              <a class="highlight-card" href="/publication/tewel2022zerocap/" target="_blank" rel="noopener">
-                <div class="hc-img-wrap"><img src="/img/papers/zerocap.jpg" alt="ZeroCap teaser"></div>
-                <div class="hc-body">
-                  <span class="hc-venue">CVPR 2022</span>
-                  <h3 class="hc-title">ZeroCap: Zero-Shot Image-to-Text Generation for Visual-Semantic Arithmetic</h3>
-                  <p class="hc-authors">Y. Tewel, Y. Shalev, I. Schwartz, L. Wolf</p>
-                  <p class="hc-tagline">Combines a frozen LM with CLIP at inference time to caption images &mdash; even doing visual arithmetic like image &ndash; word + image.</p>
-                </div>
-              </a>
-            </div>
-
-            <div class="col-md-6 mb-4">
-              <a class="highlight-card" href="/publication/chefer2022optimizing/" target="_blank" rel="noopener">
-                <div class="hc-img-wrap"><img src="/img/papers/robustvit.png?v=2" alt="RobustViT teaser"></div>
-                <div class="hc-body">
-                  <span class="hc-venue">NeurIPS 2022</span>
-                  <h3 class="hc-title">Optimizing Relevance Maps of Vision Transformers Improves Robustness</h3>
-                  <p class="hc-authors">H. Chefer, I. Schwartz, L. Wolf</p>
-                  <p class="hc-tagline">Fine-tune ViTs by directly shaping their relevance maps to focus on foreground &mdash; large gains in distribution-shift robustness.</p>
-                </div>
-              </a>
-            </div>
-
-            <div class="col-md-6 mb-4">
-              <a class="highlight-card" href="/publication/schwartz-fgacvpr-2019/" target="_blank" rel="noopener">
-                <div class="hc-img-wrap"><img src="/img/papers/fga.jpg" alt="Factor Graph Attention teaser"></div>
-                <div class="hc-body">
-                  <span class="hc-venue">CVPR 2019</span>
-                  <h3 class="hc-title">Factor Graph Attention</h3>
-                  <p class="hc-authors">I. Schwartz, A. G. Schwing, T. Hazan</p>
-                  <p class="hc-tagline">A general attention mechanism that fuses any number of utilities (image, history, question, &hellip;) for visual dialog.</p>
-                </div>
-              </a>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-
-
-  <section id="publications" class="home-section wg-pages   "  >
-    <div class="container">
-      
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-<div class="row">
-  <div class="col-12 col-lg-4 section-heading">
-    <h1>Publications</h1>
-    
   </div>
-  <div class="col-12 col-lg-8">
 
-    <p><!-- raw HTML omitted -->
-</p>
-
-    
-      
-        <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-
-  <span itemprop="author" class="article-metadata li-cite-author">
-    <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/g.-yariv/">Guy Yariv</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/i.-schwartz/">Idan Schwartz</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/y.-adi/">Yossi Adi</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/s.-benaim/">Sagie Benaim</a></span>
-  </span>
-  (2026).
-  <a href="https://guyyariv.github.io/LaMI/" itemprop="name" target="_blank" rel="noopener">LaMI: Augmenting Large Language Models via Late Multi-Image Fusion</a>.
-  <em>ACL'26</em>.
-
-  <p>
-    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openreview.net/pdf?id=4ZHogYWNdW" target="_blank" rel="noopener">PDF</a>
-    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openreview.net/forum?id=4ZHogYWNdW" target="_blank" rel="noopener">OpenReview</a>
-    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://guyyariv.github.io/LaMI/" target="_blank" rel="noopener">Project Page</a>
-  </p>
-</div>
-
-      
-    
-      
-        <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-
-  <span itemprop="author" class="article-metadata li-cite-author">
-    <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/s.-schiber/">Shira Schiber</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/o.-lindenbaum/">Ofir Lindenbaum</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/i.-schwartz/">Idan Schwartz</a></span>
-  </span>
-  (2026).
-  <a href="https://shira-schiber.github.io/TempoControl/" itemprop="name" target="_blank" rel="noopener">TempoControl: Temporal Attention Guidance for Text-to-Video Models</a>.
-  <em>CVPR'26</em>.
-
-  <p>
-    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2510.02226" target="_blank" rel="noopener">PDF</a>
-    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2510.02226" target="_blank" rel="noopener">arXiv</a>
-    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://shira-schiber.github.io/TempoControl/" target="_blank" rel="noopener">Project Page</a>
-  </p>
-</div>
-
-      
-    
-      
-        <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-
-  <span itemprop="author" class="article-metadata li-cite-author">
-    <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/o.-zafar/">Oz Zafar</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/y.-cohen/">Yuval Cohen</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/l.-wolf/">Lior Wolf</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/i.-schwartz/">Idan Schwartz</a></span>
-  </span>
-  (2026).
-  <a href="https://openaccess.thecvf.com/content/WACV2026/html/Zafar_Detection-Driven_Object_Count_Optimization_for_Text-to-Image_Diffusion_Models_WACV_2026_paper.html" itemprop="name" target="_blank" rel="noopener">Detection-Driven Object Count Optimization for Text-to-Image Diffusion Models</a>.
-  <em>WACV'26</em>.
-
-  <p>
-    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openaccess.thecvf.com/content/WACV2026/papers/Zafar_Detection-Driven_Object_Count_Optimization_for_Text-to-Image_Diffusion_Models_WACV_2026_paper.pdf" target="_blank" rel="noopener">PDF</a>
-    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2408.11721" target="_blank" rel="noopener">arXiv</a>
-    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://ozzafar.github.io/count_token/" target="_blank" rel="noopener">Project Page</a>
-  </p>
-</div>
-
-      
-    
-      
-        <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-
-  <span itemprop="author" class="article-metadata li-cite-author">
-    <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/y.-shpitzer/">Yair Shpitzer</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/g.-chechik/">Gal Chechik</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/i.-schwartz/">Idan Schwartz</a></span>
-  </span>
-  (2026).
-  <a href="https://arxiv.org/abs/2503.16025" itemprop="name" target="_blank" rel="noopener">Single Image Iterative Subject-driven Generation and Editing</a>.
-  <em>P13N Workshop, CVPR'26</em>.
-
-  <p>
-    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2503.16025" target="_blank" rel="noopener">PDF</a>
-    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://siso-paper.github.io/" target="_blank" rel="noopener">Project Page</a>
-  </p>
-</div>
-
-      
-    
-      
-        <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-
-  
-  
-
-  <span itemprop="author" class="article-metadata li-cite-author">
-    
-
-
-
-  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/g.-yariv/">G. Yariv</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/i.-gat/">I. Gat</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/s.-benaim/">S. Benaim</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/l.-wolf/">L. Wolf</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/i.-schwartz/">I. Schwartz</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/y.-adi/">Y. Adi</a></span>
-
-  </span>
-  (2023).
-  <a href="/publication/yariv2023diverse/" itemprop="name">Diverse and Aligned Audio-to-Video Generation via Text-to-Video Model Adaptation </a>.
-  <em>AAAI'24</em>.
-  
-  <p>
-
-
-
-
-
-
-
-
-  
-    
-  
-
-
-
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2309.16429.pdf" target="_blank" rel="noopener">
-  PDF
-</a>
-
-
-
-<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
-        data-filename="/publication/yariv2023diverse/yariv2023diverse.bib">
-  Cite
-</button>
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://pages.cs.huji.ac.il/adiyoss-lab/TempoTokens/" target="_blank" rel="noopener">
-  Code
-</a>
-
-</p>
-</div>
-
-<div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-  <span itemprop="author" class="article-metadata li-cite-author">
-    <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/i.-schwartz/">I. Schwartz</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/v.-snæbjarnarson/">V. Snæbjarnarson</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/s.-benaim/">S. Benaim</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/h.-chefer/">H. Chefer</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/r.-cotterell/">R. Cotterell</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/l.-wolf/">L. Wolf</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/s.-belongie/">S. Belongie</a></span>
-  </span>
-  (2023).
-  <a href="https://vesteinn.github.io/disco/" itemprop="name" target="_blank" rel="noopener">Discriminative Class Tokens for Text-to-Image Diffusion Models</a>.
-  <em>ICCV'23</em>.
-  <p>
-    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openaccess.thecvf.com/content/ICCV2023/papers/Schwartz_Discriminative_Class_Tokens_for_Text-to-Image_Diffusion_Models_ICCV_2023_paper.pdf" target="_blank" rel="noopener">PDF</a>
-    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2303.17155" target="_blank" rel="noopener">arXiv</a>
-    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/idansc/discriminative_class_tokens" target="_blank" rel="noopener">Code</a>
-    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://vesteinn.github.io/disco/" target="_blank" rel="noopener">Project Page</a>
-  </p>
-</div>
-
-        <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-
-  
-  
-
-  <span itemprop="author" class="article-metadata li-cite-author">
-    
-
-
-
-  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/y.-tewel/">Y. Tewel</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/y.-shalev/">Y. Shalev</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/r.-nadler/">R. Nadler</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/i.-schwartz/">I. Schwartz</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/l.-wolf/">L. Wolf</a></span>
-
-  </span>
-  (2023).
-  <a href="/publication/tewel2022zero/" itemprop="name">Zero-shot video captioning with evolving pseudo-tokens</a>.
-  <em>BMVC'23</em>.
-  
-  <p>
-
-
-
-
-
-
-
-
-  
-    
-  
-
-
-
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2207.11100" target="_blank" rel="noopener">
-  PDF
-</a>
-
-
-
-<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
-        data-filename="/publication/tewel2022zero/tewel2022zero.bib">
-  Cite
-</button>
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/YoadTew/zero-shot-video-to-text" target="_blank" rel="noopener">
-  Code
-</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-</p>
-
-  
-  
-</div>
-
-      
-    
-      
-        <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-
-  
-  
-
-  <span itemprop="author" class="article-metadata li-cite-author">
-    
-
-
-
-  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/g.-yariv/">G. Yariv</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/i.-gat/">I. Gat</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/s.-benaim/">S. Benaim</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/l.-wolf/">L. Wolf</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/i.-schwartz/">I. Schwartz</a></span>
-
-  </span>
-  (2023).
-  <a href="/publication/yariv2023audiotoken/" itemprop="name">AudioToken: Adaptation of Text-Conditioned Diffusion Models for Audio-to-Image Generation</a>.
-  <em>INTERSPEECH'23</em>.
-  
-  <p>
-
-
-
-
-
-
-
-
-  
-    
-  
-
-
-
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2305.13050" target="_blank" rel="noopener">
-  PDF
-</a>
-
-
-
-<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
-        data-filename="/publication/yariv2023audiotoken/yariv2023audiotoken.bib">
-  Cite
-</button>
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://pages.cs.huji.ac.il/adiyoss-lab/AudioToken" target="_blank" rel="noopener">
-  Code
-</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-</p>
-
-  
-  
-</div>
-
-      
-    
-      
-        <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-
-  
-  
-
-  <span itemprop="author" class="article-metadata li-cite-author">
-    
-
-
-
-  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/h.-chefer/">H. Chefer</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/i.-schwartz/">I. Schwartz</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/l.-wolf/">L. Wolf</a></span>
-
-  </span>
-  (2022).
-  <a href="/publication/chefer2022optimizing/" itemprop="name">Optimizing Relevance Maps of Vision Transformers Improves Robustness</a>.
-  <em>NeurIPS'22</em>.
-  
-  <p>
-
-
-
-
-
-
-
-
-  
-    
-  
-
-
-
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://proceedings.neurips.cc/paper_files/paper/2022/file/d9fa720cf96f7c18ac4d9e04270f0bbf-Paper-Conference.pdf" target="_blank" rel="noopener">
-  PDF
-</a>
-
-
-
-<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
-        data-filename="/publication/chefer2022optimizing/chefer2022optimizing.bib">
-  Cite
-</button>
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/hila-chefer/RobustViT" target="_blank" rel="noopener">
-  Code
-</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-</p>
-
-  
-  
-</div>
-
-      
-    
-      
-        <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-
-  
-  
-
-  <span itemprop="author" class="article-metadata li-cite-author">
-    
-
-
-
-  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/y.-tewel/">Y. Tewel</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/y.-shalev/">Y. Shalev</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/r.-nadler/">R. Nadler</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/i.-schwartz/">I. Schwartz</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/l.-wolf/">L. Wolf</a></span>
-
-  </span>
-  (2022).
-  <a href="/publication/tewel2022zerocap/" itemprop="name">ZeroCap: Zero-Shot Image-to-Text Generation for Visual-Semantic Arithmetic</a>.
-  <em>CVPR'22</em>.
-  
-  <p>
-
-
-
-
-
-
-
-
-  
-    
-  
-
-
-
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openaccess.thecvf.com/content/CVPR2022/papers/Tewel_ZeroCap_Zero-Shot_Image-to-Text_Generation_for_Visual-Semantic_Arithmetic_CVPR_2022_paper.pdf" target="_blank" rel="noopener">
-  PDF
-</a>
-
-
-
-<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
-        data-filename="/publication/tewel2022zerocap/tewel2022zerocap.bib">
-  Cite
-</button>
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/YoadTew/zero-shot-image-to-text" target="_blank" rel="noopener">
-  Code
-</a>
-
-</p>
-</div>
-
-<div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-  <span itemprop="author" class="article-metadata li-cite-author">
-    <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/i.-gat/">I. Gat</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/g.-lorberbom/">G. Lorberbom</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/i.-schwartz/">I. Schwartz</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/t.-hazan/">T. Hazan</a></span>
-  </span>
-  (2022).
-  <a href="/publication/gat2022latent/" itemprop="name">Latent Space Explanation by Intervention</a>.
-  <em>AAAI'22</em>.
-  <p>
-    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://ojs.aaai.org/index.php/AAAI/article/view/19948" target="_blank" rel="noopener">PDF</a>
-    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2112.04895" target="_blank" rel="noopener">arXiv</a>
-  </p>
-</div>
-
-        <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-
-  
-  
-
-  <span itemprop="author" class="article-metadata li-cite-author">
-    
-
-
-
-  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/a.-ali/">A. Ali</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/i.-schwartz/">I. Schwartz</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/t.-hazan/">T. Hazan</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/l.-wolf/">L. Wolf</a></span>
-
-  </span>
-  (2022).
-  <a href="/publication/ali2022video/" itemprop="name">Video and Text Matching with Conditioned Embeddings</a>.
-  <em>WACV'22</em>.
-  
-  <p>
-
-
-
-
-
-
-
-
-  
-    
-  
-
-
-
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openaccess.thecvf.com/content/WACV2022/papers/Ali_Video_and_Text_Matching_With_Conditioned_Embeddings_WACV_2022_paper.pdf" target="_blank" rel="noopener">
-  PDF
-</a>
-
-
-
-<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
-        data-filename="/publication/ali2022video/ali2022video.bib">
-  Cite
-</button>
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="#ZgotmplZ" target="_blank" rel="noopener">
-  Code
-</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-</p>
-
-  
-  
-</div>
-
-      
-    
-      
-        <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-
-  
-  
-
-  <span itemprop="author" class="article-metadata li-cite-author">
-    
-
-
-
-  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/t.-braude/">T. Braude</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/i.-schwartz/">I. Schwartz</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/a.-g.-schwing/">A. G. Schwing</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/a.-shamir/">A. Shamir</a></span>
-
-  </span>
-  (2022).
-  <a href="/publication/braude2022ordered/" itemprop="name">Ordered attention for coherent visual storytelling</a>.
-  <em>ACM-MM'22</em>.
-  
-  <p>
-
-
-
-
-
-
-
-
-  
-    
-  
-
-
-
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://dl.acm.org/doi/pdf/10.1145/3503161.3548161" target="_blank" rel="noopener">
-  PDF
-</a>
-
-
-
-<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
-        data-filename="/publication/braude2022ordered/braude2022ordered.bib">
-  Cite
-</button>
-
-</p>
-</div>
-
-<div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-  <span itemprop="author" class="article-metadata li-cite-author">
-    <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/o.-hupert/">O. Hupert</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/i.-schwartz/">I. Schwartz</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/l.-wolf/">L. Wolf</a></span>
-  </span>
-  (2022).
-  <a href="/publication/hupert2022describing/" itemprop="name">Describing Sets of Images with Textual-PCA</a>.
-  <em>Findings of EMNLP'22</em>.
-  <p>
-    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://aclanthology.org/2022.findings-emnlp.279.pdf" target="_blank" rel="noopener">PDF</a>
-    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/2210.12112" target="_blank" rel="noopener">arXiv</a>
-  </p>
-</div>
-
-        <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-
-  
-  
-
-  <span itemprop="author" class="article-metadata li-cite-author">
-    
-
-
-
-  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/i.-gat/">I. Gat</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/i.-schwartz/">I. Schwartz</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/a.-g.-schwing/">A. G. Schwing</a></span>
-
-  </span>
-  (2021).
-  <a href="/publication/gat-neurips-2021/" itemprop="name">Perceptual Score: Measuring Perceptiveness of Multi-Modal Classifiers</a>.
-  <em>NIPS'21</em>.
-  
-  <p>
-
-
-
-
-
-
-
-
-  
-    
-  
-
-
-
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2110.14375" target="_blank" rel="noopener">
-  PDF
-</a>
-
-
-
-<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
-        data-filename="/publication/gat-neurips-2021/gat-neurips-2021.bib">
-  Cite
-</button>
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/itaigat/perceptual-score" target="_blank" rel="noopener">
-  Code
-</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-</p>
-
-  
-  
-</div>
-
-      
-    
-      
-        <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-
-  
-  
-
-  <span itemprop="author" class="article-metadata li-cite-author">
-    
-
-
-
-  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/i.-schwartz/">I. Schwartz</a></span>
-
-  </span>
-  (2021).
-  <a href="/publication/schwartz-naacl-2021/" itemprop="name">Ensemble of MRR and NDCG models for Visual Dialog</a>.
-  <em>NAACL'21</em>.
-  
-  <p>
-
-
-
-
-
-
-
-
-  
-    
-  
-
-
-
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2104.07511.pdf" target="_blank" rel="noopener">
-  PDF
-</a>
-
-
-
-<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
-        data-filename="/publication/schwartz-naacl-2021/schwartz-naacl-2021.bib">
-  Cite
-</button>
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/idansc/mrr-ndcg" target="_blank" rel="noopener">
-  Code
-</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-</p>
-
-  
-  
-</div>
-
-      
-    
-      
-        <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-
-  
-  
-
-  <span itemprop="author" class="article-metadata li-cite-author">
-    
-
-
-
-  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/i.-gat/">I. Gat</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/i.-schwartz/">I. Schwartz</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/a.-g.-schwing/">A. G. Schwing</a></span>
-
-  </span>
-  (2020).
-  <a href="/publication/gat-neurips-2020/" itemprop="name">Removing Bias in Multi-modal Classifiers: Regularization by Maximizing Functional Entropies</a>.
-  <em>NeurIPS'20</em>.
-  
-  <p>
-
-
-
-
-
-
-
-
-  
-    
-  
-
-
-
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/2010.10802.pdf" target="_blank" rel="noopener">
-  PDF
-</a>
-
-
-
-<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
-        data-filename="/publication/gat-neurips-2020/gat-neurips-2020.bib">
-  Cite
-</button>
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/itaigat/removing-bias-in-multi-modal-classifiers" target="_blank" rel="noopener">
-  Code
-</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-</p>
-
-  
-  
-</div>
-
-      
-    
-      
-        <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-
-  
-  
-
-  <span itemprop="author" class="article-metadata li-cite-author">
-    
-
-
-
-  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/i.-schwartz/">I. Schwartz</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/a.-g.-schwing/">A. G. Schwing</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/t.-hazan/">T. Hazan</a></span>
-
-  </span>
-  (2019).
-  <a href="/publication/schwartz-cvpr-2019/" itemprop="name">A Simple Baseline for Audio-Visual Scene-Aware Dialog</a>.
-  <em>CVPR'19</em>.
-  
-  <p>
-
-
-
-
-
-
-
-
-  
-    
-  
-
-
-
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/1904.05876.pdf" target="_blank" rel="noopener">
-  PDF
-</a>
-
-
-
-<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
-        data-filename="/publication/schwartz-cvpr-2019/schwartz-cvpr-2019.bib">
-  Cite
-</button>
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/idansc/simple-avsd" target="_blank" rel="noopener">
-  Code
-</a>
-
-</p>
-</div>
-
-<div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-  <span itemprop="author" class="article-metadata li-cite-author">
-    <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/i.-schwartz/">I. Schwartz</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person">S. Yu</span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/t.-hazan/">T. Hazan</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/a.-g.-schwing/">A. G. Schwing</a></span>
-  </span>
-  (2019).
-  <a href="/publication/schwartz-fgacvpr-2019/" itemprop="name">Factor Graph Attention</a>.
-  <em>CVPR'19</em>.
-  <p>
-    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://openaccess.thecvf.com/content_CVPR_2019/papers/Schwartz_Factor_Graph_Attention_CVPR_2019_paper.pdf" target="_blank" rel="noopener">PDF</a>
-    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/abs/1904.05880" target="_blank" rel="noopener">arXiv</a>
-    <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/idansc/fga" target="_blank" rel="noopener">Code</a>
-  </p>
-</div>
-
-        <div class="pub-list-item" style="margin-bottom: 1rem" itemscope itemtype="http://schema.org/CreativeWork">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-
-  
-  
-
-  <span itemprop="author" class="article-metadata li-cite-author">
-    
-
-
-
-  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/i.-schwartz/">I. Schwartz</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/a.-g.-schwing/">A. G. Schwing</a></span>, <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/t.-hazan/">Tamir Hazan</a></span>
-
-  </span>
-  (2017).
-  <a href="/publication/schwartz-nips-2017/" itemprop="name">High-Order Attention Models for Visual Question Answering</a>.
-  <em>NIPS'17</em>.
-  
-  <p>
-
-
-
-
-
-
-
-
-  
-    
-  
-
-
-
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://arxiv.org/pdf/1711.04323" target="_blank" rel="noopener">
-  PDF
-</a>
-
-
-
-<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
-        data-filename="/publication/schwartz-nips-2021/schwartz-nips-2021.bib">
-  Cite
-</button>
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/idansc/HighOrderAtten" target="_blank" rel="noopener">
-  Code
-</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-</p>
-
-  
-  
-</div>
-
-      
-    
-
-    
-
+  <div class="sel">
+    <div class="media"><img src="/img/papers/tempotokens.jpg" alt="TempoTokens teaser" loading="lazy"></div>
+    <div>
+      <div class="pt"><a href="https://pages.cs.huji.ac.il/adiyoss-lab/TempoTokens/">Diverse and Aligned Audio-to-Video Generation via Text-to-Video Model Adaptation</a></div>
+      <p class="pa sans">G. Yariv, I. Gat, S. Benaim, L. Wolf, <b>I. Schwartz</b>, Y. Adi &middot; AAAI 2024</p>
+      <p class="pd">Maps audio into the input space of a frozen text-to-video model, generating videos temporally aligned with the sound.</p>
+    </div>
   </div>
-</div>
 
+  <div class="sel">
+    <div class="media"><img src="/img/papers/discriminative.gif" alt="Discriminative class tokens teaser" loading="lazy"></div>
+    <div>
+      <div class="pt"><a href="https://vesteinn.github.io/disco/">Discriminative Class Tokens for Text-to-Image Diffusion Models</a></div>
+      <p class="pa sans"><b>I. Schwartz</b>, V. Sn&aelig;bjarnarson, S. Benaim, H. Chefer, R. Cotterell, L. Wolf, S. Belongie &middot; ICCV 2023</p>
+      <p class="pd">Learns a single token from a classifier&rsquo;s gradient to disambiguate fine-grained classes.</p>
     </div>
-  </section>
-
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-
-  <section id="patents" class="home-section">
-    <div class="container">
-
-      <style>
-        .patent-list { margin: 0; padding: 0; list-style: none; }
-        .patent-list li {
-          padding: 0.7rem 0;
-          border-bottom: 1px solid #eef0f5;
-          font-size: 0.97rem;
-          line-height: 1.5;
-        }
-        body.dark .patent-list li { border-bottom-color: #3a3e4d; }
-        .patent-list li:last-child { border-bottom: none; }
-        .patent-list .patent-title {
-          font-weight: 600;
-          color: #1a1a1a;
-        }
-        body.dark .patent-list .patent-title { color: #f8f8f2; }
-        .patent-list .patent-title a { color: inherit; text-decoration: none; }
-        .patent-list .patent-title a:hover { color: #2962ff; text-decoration: underline; }
-        body.dark .patent-list .patent-title a:hover { color: #8aa4ff; }
-        .patent-list .patent-meta {
-          display: block;
-          color: #6c757d;
-          font-size: 0.86rem;
-          margin-top: 0.18rem;
-        }
-        body.dark .patent-list .patent-meta { color: #b6bcc9; }
-        .patent-list .patent-id {
-          display: inline-block;
-          font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-          font-size: 0.78rem;
-          color: #2962ff;
-          background: #eef2ff;
-          padding: 0.1rem 0.5rem;
-          border-radius: 4px;
-          margin-left: 0.4rem;
-          vertical-align: middle;
-        }
-        body.dark .patent-list .patent-id { color: #8aa4ff; background: #1b2647; }
-        .patent-subhead {
-          font-size: 0.78rem;
-          font-weight: 700;
-          letter-spacing: 0.08em;
-          text-transform: uppercase;
-          color: #6c757d;
-          margin: 0 0 0.5rem 0;
-        }
-        .patent-subhead:not(:first-child) { margin-top: 1.6rem; }
-        body.dark .patent-subhead { color: #8aa4ff; }
-      </style>
-
-      <div class="row">
-        <div class="col-12 col-lg-4 section-heading">
-          <h1>Patents</h1>
-        </div>
-        <div class="col-12 col-lg-8">
-          <ul class="patent-list">
-            <li>
-              <span class="patent-title"><a href="https://patentcenter.uspto.gov/applications/18924802" target="_blank" rel="noopener">Cloud Instance Type Recommendations</a></span>
-              <span class="patent-meta">
-                I. Schwartz, G. Yariv, T. Ohayon
-                &middot; 2025
-                <span class="patent-id">US App. 18/924,802</span>
-              </span>
-            </li>
-            <li>
-              <span class="patent-title"><a href="https://patentcenter.uspto.gov/applications/18634377" target="_blank" rel="noopener">Resource Distribution Engine(s) for Allocating and Securing Reclaimable Resources Within a Cloud Environment</a></span>
-              <span class="patent-meta">
-                I. Schwartz, T. Ohayon, G. Yariv, O. Gurfinkel, M. Goldberg, R. Vladimirsky, et&nbsp;al.
-                &middot; 2025
-                <span class="patent-id">US App. 18/634,377</span>
-              </span>
-            </li>
-            <li>
-              <span class="patent-title"><a href="https://patents.google.com/patent/US11915053" target="_blank" rel="noopener">Interruption Predictions for Cloud Compute Instances</a></span>
-              <span class="patent-meta">
-                I. Schwartz, O. Muchnik, J. Cohen, K. McGrath, A. Shachar
-                &middot; Granted 2024
-                <span class="patent-id">US 11,915,053</span>
-              </span>
-            </li>
-            <li>
-              <span class="patent-title"><a href="https://patentcenter.uspto.gov/applications/18344664" target="_blank" rel="noopener">Identifying Anomalous Activities in a Cloud Computing Environment</a></span>
-              <span class="patent-meta">
-                Y. Shen, A. Benameur, A. X. Ough, I. Schwartz
-                &middot; 2024
-                <span class="patent-id">US App. 18/344,664</span>
-              </span>
-            </li>
-            <li>
-              <span class="patent-title"><a href="https://patentcenter.uspto.gov/applications/18046970" target="_blank" rel="noopener">Spare Resource Availability Prediction with Limited Historical Data</a></span>
-              <span class="patent-meta">
-                T. Ohayon, I. Schwartz
-                &middot; 2024
-                <span class="patent-id">US App. 18/046,970</span>
-              </span>
-            </li>
-            <li>
-              <span class="patent-title"><a href="https://patents.google.com/patent/US11636164" target="_blank" rel="noopener">Search System for Providing Web Crawling Query Prioritization Based on Classification Operation Performance</a></span>
-              <span class="patent-meta">
-                I. Guy, I. Schwartz, K. Radinsky
-                &middot; Granted 2023
-                <span class="patent-id">US 11,636,164</span>
-              </span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="talks" class="home-section wg-talks   "  >
-    <div class="container">
-      
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-<div class="row">
-  <div class="col-12 col-lg-4 section-heading">
-    <h1>Talks</h1>
-    
   </div>
-  <div class="col-12 col-lg-8">
 
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card-simple">
-          <div class="article-metadata">
-            <div>
-              <span>2025</span>
-            </div>
-          </div>
-          <h3 class="article-title mb-1 mt-3">
-            <a href="https://www.youtube.com/watch?v=XwaEv0Wq06M" target="_blank" rel="noopener">Discriminative models can make generative models better (in Hebrew)</a>
-          </h3>
-          <div class="article-style">
-            <div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/XwaEv0Wq06M" allowfullscreen></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
+  <div class="sel">
+    <div class="media"><img src="/img/papers/zerocap.jpg" alt="ZeroCap teaser" loading="lazy"></div>
+    <div>
+      <div class="pt"><a href="/publication/tewel2022zerocap/">ZeroCap: Zero-Shot Image-to-Text Generation for Visual-Semantic Arithmetic</a></div>
+      <p class="pa sans">Y. Tewel, Y. Shalev, <b>I. Schwartz</b>, L. Wolf &middot; CVPR 2022</p>
+      <p class="pd">Combines a frozen LM with CLIP at inference time to caption images &mdash; even visual arithmetic like image &minus; word &plus; image.</p>
     </div>
-
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card-simple">
-          <div class="article-metadata">
-            <div>
-              <span>2024</span>
-            </div>
-          </div>
-          <h3 class="article-title mb-1 mt-3">
-            <a href="https://www.youtube.com/watch?v=pWq9MA7ZAuU" target="_blank" rel="noopener">Multimodal Attention, Perception, Comprehension</a>
-          </h3>
-          <div class="article-style">
-            <div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pWq9MA7ZAuU" allowfullscreen></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card-simple">
-          <div class="article-metadata">
-            <div>
-              <span>2019</span>
-            </div>
-          </div>
-          <h3 class="article-title mb-1 mt-3">
-            <a href="https://www.youtube.com/watch?v=hnI-t-txqCk" target="_blank" rel="noopener">Attention Models for Vision and Language</a>
-          </h3>
-          <div class="article-style">
-            <div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/hnI-t-txqCk" allowfullscreen></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
-</div>
 
+  <div class="sel">
+    <div class="media"><img src="/img/papers/robustvit.png" alt="RobustViT teaser" loading="lazy"></div>
+    <div>
+      <div class="pt"><a href="/publication/chefer2022optimizing/">Optimizing Relevance Maps of Vision Transformers Improves Robustness</a></div>
+      <p class="pa sans">H. Chefer, <b>I. Schwartz</b>, L. Wolf &middot; NeurIPS 2022</p>
+      <p class="pd">Fine-tunes ViTs by shaping their relevance maps to focus on the foreground, with large robustness gains under distribution shift.</p>
     </div>
-  </section>
-
-  <section id="contact" class="home-section wg-contact   "  >
-    <div class="container">
-      
-
-
-
-
-<div class="row contact-widget">
-  <div class="col-12 col-lg-4 section-heading">
-    <h1>Contact</h1>
-    
   </div>
-  <div class="col-12 col-lg-8">
-    
 
-    
-
-    <ul class="fa-ul" itemscope>
-
-      
-      <li>
-        <i class="fa-li fas fa-envelope fa-2x" aria-hidden="true"></i>
-        <span id="person-email" itemprop="email">idanschwartz at gmail dot com</span>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-      
-      
-      
-      
-        
-      
-      
-      
-      
-      
-      <li>
-        <i class="fa-li fas fa-map-marker-alt fa-2x" aria-hidden="true"></i>
-        <span>Computer Science Department, Room 213<br>Building 503<br>Bar-Ilan University<br>Ramat Gan, Israel</span>
-      </li>
-      
-
-    </ul>
-
-    
-    <div class="d-none">
-      <input id="map-provider" value="2">
-      <input id="map-lat" value="32.0700">
-      <input id="map-lng" value="34.8430">
-      <input id="map-dir" value="Bar-Ilan University, Building 503, Ramat Gan, Israel">
-      <input id="map-zoom" value="17">
-      <input id="map-api-key" value="">
+  <div class="sel">
+    <div class="media"><img src="/img/papers/fga.jpg" alt="Factor Graph Attention teaser" loading="lazy"></div>
+    <div>
+      <div class="pt"><a href="/publication/schwartz-fgacvpr-2019/">Factor Graph Attention</a></div>
+      <p class="pa sans"><b>I. Schwartz</b>, T. Hazan, A. G. Schwing &middot; CVPR 2019</p>
+      <p class="pd">A general attention mechanism that fuses any number of utilities (image, history, question, &hellip;) for visual dialog.</p>
     </div>
-
-    <style>
-      .contact-map-wrap { margin-top: 1rem; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08); border: 1px solid #eef0f5; position: relative; }
-      body.dark .contact-map-wrap { border-color: #3a3e4d; box-shadow: 0 1px 3px rgba(0,0,0,0.3); }
-      .contact-map-wrap iframe { display: block; width: 100%; height: 360px; border: 0; }
-      .map-actions { display: flex; gap: 0.5rem; margin-top: 0.85rem; flex-wrap: wrap; }
-      .map-action {
-        display: inline-flex; align-items: center; gap: 0.45rem;
-        padding: 0.5rem 0.95rem; border-radius: 8px;
-        background: #2962ff; color: #fff !important;
-        text-decoration: none !important; font-size: 0.88rem; font-weight: 600;
-        transition: background 0.15s ease, transform 0.15s ease;
-      }
-      .map-action:hover { background: #1e50e0; transform: translateY(-1px); color: #fff !important; }
-      .map-action.secondary { background: #f4f6fb; color: #1a1a1a !important; border: 1px solid #e6eaf2; }
-      .map-action.secondary:hover { background: #e9edf6; color: #1a1a1a !important; }
-      body.dark .map-action.secondary { background: #2f3240; color: #f8f8f2 !important; border-color: #3a3e4d; }
-      body.dark .map-action.secondary:hover { background: #3a3e4d; color: #f8f8f2 !important; }
-    </style>
-
-    <div class="contact-map-wrap">
-      <iframe
-        src="https://www.openstreetmap.org/export/embed.html?bbox=34.83825%2C32.06710%2C34.84775%2C32.07290&amp;layer=mapnik&amp;marker=32.0700%2C34.8430"
-        loading="lazy"
-        title="Bar-Ilan University, Building 503 — map"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-
-    <div class="map-actions">
-      <a class="map-action" href="https://www.google.com/maps/dir/?api=1&destination=Bar-Ilan+University+Building+503+Ramat+Gan" target="_blank" rel="noopener">
-        <i class="fas fa-directions"></i> Get directions
-      </a>
-      <a class="map-action secondary" href="https://www.openstreetmap.org/?mlat=32.0700&amp;mlon=34.8430#map=17/32.0700/34.8430" target="_blank" rel="noopener">
-        <i class="fas fa-external-link-alt"></i> Open in OpenStreetMap
-      </a>
-    </div>
-    
-
   </div>
-</div>
+</section>
 
-    </div>
-  </section>
+<section id="publications">
+  <h2>Publications</h2>
 
+  <div class="pubyear sans">2026</div>
+  <div class="pub">
+    <a href="https://guyyariv.github.io/LaMI/">LaMI: Augmenting Large Language Models via Late Multi-Image Fusion</a><br>
+    <span class="pa sans">G. Yariv, <b>I. Schwartz</b>, Y. Adi, S. Benaim</span><br>
+    <span class="pv">ACL 2026</span> &nbsp;<span class="pl sans"><a href="https://openreview.net/pdf?id=4ZHogYWNdW">pdf</a> / <a href="https://guyyariv.github.io/LaMI/">project</a></span>
+  </div>
+  <div class="pub">
+    <a href="https://shira-schiber.github.io/TempoControl/">TempoControl: Temporal Attention Guidance for Text-to-Video Models</a><br>
+    <span class="pa sans">S. Schiber, O. Lindenbaum, <b>I. Schwartz</b></span><br>
+    <span class="pv">CVPR 2026</span> &nbsp;<span class="pl sans"><a href="https://arxiv.org/abs/2510.02226">arXiv</a> / <a href="https://shira-schiber.github.io/TempoControl/">project</a></span>
+  </div>
+  <div class="pub">
+    <a href="https://openaccess.thecvf.com/content/WACV2026/html/Zafar_Detection-Driven_Object_Count_Optimization_for_Text-to-Image_Diffusion_Models_WACV_2026_paper.html">Detection-Driven Object Count Optimization for Text-to-Image Diffusion Models</a><br>
+    <span class="pa sans">O. Zafar, Y. Cohen, L. Wolf, <b>I. Schwartz</b></span><br>
+    <span class="pv">WACV 2026</span> &nbsp;<span class="pl sans"><a href="https://openaccess.thecvf.com/content/WACV2026/papers/Zafar_Detection-Driven_Object_Count_Optimization_for_Text-to-Image_Diffusion_Models_WACV_2026_paper.pdf">pdf</a> / <a href="https://arxiv.org/abs/2408.11721">arXiv</a> / <a href="https://ozzafar.github.io/count_token/">project</a></span>
+  </div>
+  <div class="pub">
+    <a href="https://arxiv.org/abs/2503.16025">Single Image Iterative Subject-driven Generation and Editing</a><br>
+    <span class="pa sans">Y. Shpitzer, G. Chechik, <b>I. Schwartz</b></span><br>
+    <span class="pv">P13N Workshop, CVPR 2026</span> &nbsp;<span class="pl sans"><a href="https://arxiv.org/pdf/2503.16025">pdf</a> / <a href="https://siso-paper.github.io/">project</a></span>
+  </div>
 
-<style>
-  body.dark .site-footer,
-  body.dark .site-footer .powered-by,
-  body.dark .site-footer .powered-by a,
-  body.dark footer a#back_to_top,
-  body.dark footer a#back_to_top i {
-    color: #b6bcc9 !important;
-  }
-  body.dark .site-footer .powered-by a:hover,
-  body.dark footer a#back_to_top:hover i {
-    color: #8aa4ff !important;
-  }
-</style>
+  <div class="pubyear sans">2024</div>
+  <div class="pub">
+    <a href="/publication/yariv2023diverse/">Diverse and Aligned Audio-to-Video Generation via Text-to-Video Model Adaptation</a><br>
+    <span class="pa sans">G. Yariv, I. Gat, S. Benaim, L. Wolf, <b>I. Schwartz</b>, Y. Adi</span><br>
+    <span class="pv">AAAI 2024</span> &nbsp;<span class="pl sans"><a href="https://arxiv.org/pdf/2309.16429.pdf">pdf</a> / <a href="https://pages.cs.huji.ac.il/adiyoss-lab/TempoTokens/">project</a></span>
+  </div>
 
-<div class="container">
-  <footer class="site-footer">
-  
+  <div class="pubyear sans">2023</div>
+  <div class="pub">
+    <a href="https://vesteinn.github.io/disco/">Discriminative Class Tokens for Text-to-Image Diffusion Models</a><br>
+    <span class="pa sans"><b>I. Schwartz</b>, V. Sn&aelig;bjarnarson, S. Benaim, H. Chefer, R. Cotterell, L. Wolf, S. Belongie</span><br>
+    <span class="pv">ICCV 2023</span> &nbsp;<span class="pl sans"><a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Schwartz_Discriminative_Class_Tokens_for_Text-to-Image_Diffusion_Models_ICCV_2023_paper.pdf">pdf</a> / <a href="https://github.com/idansc/discriminative_class_tokens">code</a> / <a href="https://vesteinn.github.io/disco/">project</a></span>
+  </div>
+  <div class="pub">
+    <a href="/publication/tewel2022zero/">Zero-Shot Video Captioning with Evolving Pseudo-Tokens</a><br>
+    <span class="pa sans">Y. Tewel, Y. Shalev, R. Nadler, <b>I. Schwartz</b>, L. Wolf</span><br>
+    <span class="pv">BMVC 2023</span> &nbsp;<span class="pl sans"><a href="https://arxiv.org/abs/2207.11100">arXiv</a> / <a href="https://github.com/YoadTew/zero-shot-video-to-text">code</a></span>
+  </div>
+  <div class="pub">
+    <a href="/publication/yariv2023audiotoken/">AudioToken: Adaptation of Text-Conditioned Diffusion Models for Audio-to-Image Generation</a><br>
+    <span class="pa sans">G. Yariv, I. Gat, S. Benaim, L. Wolf, <b>I. Schwartz</b></span><br>
+    <span class="pv">INTERSPEECH 2023</span> &nbsp;<span class="pl sans"><a href="https://arxiv.org/pdf/2305.13050">pdf</a> / <a href="https://pages.cs.huji.ac.il/adiyoss-lab/AudioToken">project</a></span>
+  </div>
 
-  <p class="powered-by">
-    
+  <div class="pubyear sans">2022</div>
+  <div class="pub">
+    <a href="/publication/chefer2022optimizing/">Optimizing Relevance Maps of Vision Transformers Improves Robustness</a><br>
+    <span class="pa sans">H. Chefer, <b>I. Schwartz</b>, L. Wolf</span><br>
+    <span class="pv">NeurIPS 2022</span> &nbsp;<span class="pl sans"><a href="https://proceedings.neurips.cc/paper_files/paper/2022/file/d9fa720cf96f7c18ac4d9e04270f0bbf-Paper-Conference.pdf">pdf</a> / <a href="https://github.com/hila-chefer/RobustViT">code</a></span>
+  </div>
+  <div class="pub">
+    <a href="/publication/tewel2022zerocap/">ZeroCap: Zero-Shot Image-to-Text Generation for Visual-Semantic Arithmetic</a><br>
+    <span class="pa sans">Y. Tewel, Y. Shalev, <b>I. Schwartz</b>, L. Wolf</span><br>
+    <span class="pv">CVPR 2022</span> &nbsp;<span class="pl sans"><a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Tewel_ZeroCap_Zero-Shot_Image-to-Text_Generation_for_Visual-Semantic_Arithmetic_CVPR_2022_paper.pdf">pdf</a> / <a href="https://github.com/YoadTew/zero-shot-image-to-text">code</a></span>
+  </div>
+  <div class="pub">
+    <a href="/publication/hupert2022describing/">Describing Sets of Images with Textual-PCA</a><br>
+    <span class="pa sans">O. Hupert, <b>I. Schwartz</b>, L. Wolf</span><br>
+    <span class="pv">Findings of EMNLP 2022</span> &nbsp;<span class="pl sans"><a href="https://aclanthology.org/2022.findings-emnlp.279.pdf">pdf</a> / <a href="https://arxiv.org/abs/2210.12112">arXiv</a></span>
+  </div>
+  <div class="pub">
+    <a href="/publication/braude2022ordered/">Ordered Attention for Coherent Visual Storytelling</a><br>
+    <span class="pa sans">T. Braude, <b>I. Schwartz</b>, A. G. Schwing, A. Shamir</span><br>
+    <span class="pv">ACM Multimedia 2022</span> &nbsp;<span class="pl sans"><a href="https://dl.acm.org/doi/pdf/10.1145/3503161.3548161">pdf</a></span>
+  </div>
+  <div class="pub">
+    <a href="/publication/gat2022latent/">Latent Space Explanation by Intervention</a><br>
+    <span class="pa sans">I. Gat, G. Lorberbom, <b>I. Schwartz</b>, T. Hazan</span><br>
+    <span class="pv">AAAI 2022</span> &nbsp;<span class="pl sans"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/19948">pdf</a> / <a href="https://arxiv.org/abs/2112.04895">arXiv</a></span>
+  </div>
+  <div class="pub">
+    <a href="/publication/ali2022video/">Video and Text Matching with Conditioned Embeddings</a><br>
+    <span class="pa sans">A. Ali, <b>I. Schwartz</b>, T. Hazan, L. Wolf</span><br>
+    <span class="pv">WACV 2022</span> &nbsp;<span class="pl sans"><a href="https://openaccess.thecvf.com/content/WACV2022/papers/Ali_Video_and_Text_Matching_With_Conditioned_Embeddings_WACV_2022_paper.pdf">pdf</a></span>
+  </div>
 
-    Powered by the
-    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
-    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+  <div class="pubyear sans">2021</div>
+  <div class="pub">
+    <a href="/publication/gat-neurips-2021/">Perceptual Score: Measuring Perceptiveness of Multi-Modal Classifiers</a><br>
+    <span class="pa sans">I. Gat, <b>I. Schwartz</b>, A. G. Schwing</span><br>
+    <span class="pv">NeurIPS 2021</span> &nbsp;<span class="pl sans"><a href="https://arxiv.org/pdf/2110.14375">pdf</a> / <a href="https://github.com/itaigat/perceptual-score">code</a></span>
+  </div>
+  <div class="pub">
+    <a href="/publication/schwartz-naacl-2021/">Ensemble of MRR and NDCG Models for Visual Dialog</a><br>
+    <span class="pa sans"><b>I. Schwartz</b></span><br>
+    <span class="pv">NAACL 2021</span> &nbsp;<span class="pl sans"><a href="https://arxiv.org/pdf/2104.07511.pdf">pdf</a> / <a href="https://github.com/idansc/mrr-ndcg">code</a></span>
+  </div>
 
-    
-    <span class="float-right" aria-hidden="true">
-      <a href="#" id="back_to_top">
-        <span class="button_icon">
-          <i class="fas fa-chevron-up fa-2x"></i>
-        </span>
-      </a>
-    </span>
-    
-  </p>
+  <div class="pubyear sans">2020</div>
+  <div class="pub">
+    <a href="/publication/gat-neurips-2020/">Removing Bias in Multi-Modal Classifiers: Regularization by Maximizing Functional Entropies</a><br>
+    <span class="pa sans">I. Gat, <b>I. Schwartz</b>, A. G. Schwing, T. Hazan</span><br>
+    <span class="pv">NeurIPS 2020</span> &nbsp;<span class="pl sans"><a href="https://arxiv.org/pdf/2010.10802.pdf">pdf</a> / <a href="https://github.com/itaigat/removing-bias-in-multi-modal-classifiers">code</a></span>
+  </div>
+
+  <div class="pubyear sans">2019</div>
+  <div class="pub">
+    <a href="/publication/schwartz-fgacvpr-2019/">Factor Graph Attention</a><br>
+    <span class="pa sans"><b>I. Schwartz</b>, T. Hazan, A. G. Schwing</span><br>
+    <span class="pv">CVPR 2019</span> &nbsp;<span class="pl sans"><a href="https://openaccess.thecvf.com/content_CVPR_2019/papers/Schwartz_Factor_Graph_Attention_CVPR_2019_paper.pdf">pdf</a> / <a href="https://arxiv.org/abs/1904.05880">arXiv</a> / <a href="https://github.com/idansc/fga">code</a></span>
+  </div>
+  <div class="pub">
+    <a href="/publication/schwartz-cvpr-2019/">A Simple Baseline for Audio-Visual Scene-Aware Dialog</a><br>
+    <span class="pa sans"><b>I. Schwartz</b>, A. G. Schwing, T. Hazan</span><br>
+    <span class="pv">CVPR 2019</span> &nbsp;<span class="pl sans"><a href="https://arxiv.org/pdf/1904.05876.pdf">pdf</a> / <a href="https://github.com/idansc/simple-avsd">code</a></span>
+  </div>
+
+  <div class="pubyear sans">2017</div>
+  <div class="pub">
+    <a href="/publication/schwartz-nips-2017/">High-Order Attention Models for Visual Question Answering</a><br>
+    <span class="pa sans"><b>I. Schwartz</b>, A. G. Schwing, T. Hazan</span><br>
+    <span class="pv">NeurIPS 2017</span> &nbsp;<span class="pl sans"><a href="https://arxiv.org/pdf/1711.04323">pdf</a> / <a href="https://github.com/idansc/HighOrderAtten">code</a></span>
+  </div>
+</section>
+
+<section id="lab">
+  <h2>The Multimodal Lab</h2>
+  <p>Prospective students: if you are interested in multimodal generative models, feel free to <a href="mailto:idanschwartz@gmail.com">get in touch</a>.</p>
+
+  <h3>PhD students</h3>
+  <ul class="plain">
+    <li>Ben Fishman <span class="muted">(joint with Gal Chechik)</span></li>
+  </ul>
+
+  <h3>MSc students</h3>
+  <ul class="plain">
+    <li>Gilad Carmel</li>
+    <li>Mark Vexler</li>
+    <li>Uriel Dolev <span class="muted">(joint with Yoav Goldberg)</span></li>
+    <li>Amit Ronen</li>
+    <li>Aviv Weidenfeld</li>
+    <li>Omri Keren</li>
+    <li>Binyamin Ramati</li>
+    <li>Yona Orunov</li>
+    <li>Yuval Cohen</li>
+  </ul>
+
+  <h3>Alumni</h3>
+  <ul class="plain">
+    <li>Shira Schiber <span class="muted">(joint with Ofir Lindenbaum)</span> &mdash; <a href="https://arxiv.org/abs/2510.02226"><em>TempoControl</em>, CVPR 2026</a></li>
+    <li>Yair Shpitzer <span class="muted">(joint with Gal Chechik)</span> &mdash; <a href="https://arxiv.org/abs/2503.16025"><em>SISO</em>, CVPR 2026 Workshop</a></li>
+  </ul>
+</section>
+
+<section id="patents">
+  <h2>Patents</h2>
+  <ul class="plain">
+    <li class="patent"><a href="https://patentcenter.uspto.gov/applications/18924802">Cloud Instance Type Recommendations</a><span class="pmeta sans">I. Schwartz, G. Yariv, T. Ohayon &middot; US App. 18/924,802, 2025</span></li>
+    <li class="patent"><a href="https://patentcenter.uspto.gov/applications/18634377">Resource Distribution Engine(s) for Allocating and Securing Reclaimable Resources Within a Cloud Environment</a><span class="pmeta sans">I. Schwartz, T. Ohayon, G. Yariv, O. Gurfinkel, M. Goldberg, R. Vladimirsky, et&nbsp;al. &middot; US App. 18/634,377, 2025</span></li>
+    <li class="patent"><a href="https://patents.google.com/patent/US11915053">Interruption Predictions for Cloud Compute Instances</a><span class="pmeta sans">I. Schwartz, O. Muchnik, J. Cohen, K. McGrath, A. Shachar &middot; US 11,915,053, granted 2024</span></li>
+    <li class="patent"><a href="https://patentcenter.uspto.gov/applications/18344664">Identifying Anomalous Activities in a Cloud Computing Environment</a><span class="pmeta sans">Y. Shen, A. Benameur, A. X. Ough, I. Schwartz &middot; US App. 18/344,664, 2024</span></li>
+    <li class="patent"><a href="https://patentcenter.uspto.gov/applications/18046970">Spare Resource Availability Prediction with Limited Historical Data</a><span class="pmeta sans">T. Ohayon, I. Schwartz &middot; US App. 18/046,970, 2024</span></li>
+    <li class="patent"><a href="https://patents.google.com/patent/US11636164">Search System for Providing Web Crawling Query Prioritization Based on Classification Operation Performance</a><span class="pmeta sans">I. Guy, I. Schwartz, K. Radinsky &middot; US 11,636,164, granted 2023</span></li>
+  </ul>
+</section>
+
+<section id="talks">
+  <h2>Talks</h2>
+  <ul class="plain">
+    <li>Discriminative Models Can Make Generative Models Better <span class="muted">(in Hebrew)</span>, 2025 &nbsp;<span class="pl sans"><a href="https://www.youtube.com/watch?v=XwaEv0Wq06M">video</a></span></li>
+    <li>Multimodal Attention, Perception, Comprehension, 2024 &nbsp;<span class="pl sans"><a href="https://www.youtube.com/watch?v=pWq9MA7ZAuU">video</a></span></li>
+    <li>Attention Models for Vision and Language, 2019 &nbsp;<span class="pl sans"><a href="https://www.youtube.com/watch?v=hnI-t-txqCk">video</a></span></li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p><a href="mailto:idanschwartz@gmail.com">idanschwartz@gmail.com</a></p>
+  <p>Computer Science Department, Room 213<br>
+  Building 503, Bar-Ilan University<br>
+  Ramat Gan, Israel &nbsp;<span class="pl sans"><a href="https://www.google.com/maps/search/?api=1&amp;query=Bar-Ilan+University+Building+503+Ramat+Gan">map</a></span></p>
+</section>
+
+<footer>
+  Idan Schwartz &middot; Bar-Ilan University
 </footer>
 
 </div>
-
-
-<div id="modal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Cite</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <pre><code class="tex hljs"></code></pre>
-      </div>
-      <div class="modal-footer">
-        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
-          <i class="fas fa-copy"></i> Copy
-        </a>
-        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
-          <i class="fas fa-download"></i> Download
-        </a>
-        <div id="modal-error"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-    
-
-    
-    
-
-    
-    
-    
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
-
-      
-
-      
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
-        
-      
-
-      
-      
-    
-
-    
-    
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin="anonymous"></script>
-    
-
-    
-    
-    
-
-    
-    
-    <script>hljs.initHighlightingOnLoad();</script>
-    
-
-    
-
-    
-    
-
-    
-
-    
-    
-
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <script src="/js/academic.min.270bd00dc4a19e10fad7ee411b9acc80.js"></script>
-
-  </body>
+</body>
 </html>
-
-
