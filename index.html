@@ -116,14 +116,18 @@ p { margin: 0 0 0.9rem; }
 .edu li { margin-bottom: 0.2rem; }
 
 .news { list-style: none; margin: 0; padding: 0; }
-.news li { margin-bottom: 0.55rem; display: flex; gap: 0.6rem; }
-.news .date { flex: 0 0 4.6rem; color: var(--muted); font-size: 0.85rem; padding-top: 0.22rem; }
-.news .newsub { list-style: none; margin: 0.45rem 0 0.2rem; padding: 0; }
-.news .newsub li { display: flex; gap: 0.75rem; align-items: center; margin-bottom: 0.5rem; }
-.news .nthumb { flex: 0 0 72px; width: 72px; height: 60px; object-fit: cover; border: 1px solid var(--thumb-border); border-radius: 5px; display: block; }
+.news li { margin-bottom: 0.75rem; display: flex; gap: 0.75rem; align-items: center; }
+.news li.multi { align-items: flex-start; }
+.news .date { flex: 0 0 4.6rem; color: var(--muted); font-size: 0.85rem; }
+.news li.multi > .date { padding-top: 0.22rem; }
+.news .nbody { flex: 1 1 0; min-width: 0; }
+.news .nt { flex: 0 0 72px; display: block; line-height: 0; }
+.news .nthumb { flex: 0 0 72px; width: 72px; height: 60px; object-fit: cover; border: 1px solid var(--thumb-border); border-radius: 5px; display: block; background: #fff; }
+.news .newsub { list-style: none; margin: 0.5rem 0 0; padding: 0; }
+.news .newsub li { margin-bottom: 0.55rem; }
 
 .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem; }
-.card { display: flex; flex-direction: column; border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; color: inherit; background: var(--bg); transition: border-color 0.16s ease, transform 0.16s ease, box-shadow 0.16s ease; }
+a.card { display: flex; flex-direction: column; border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; color: inherit; background: var(--bg); transition: border-color 0.16s ease, transform 0.16s ease, box-shadow 0.16s ease; }
 a.card:hover { border-color: var(--link); transform: translateY(-2px); box-shadow: var(--card-shadow); text-decoration: none; }
 .cimg { position: relative; height: 0; padding-bottom: 62.5%; background: #fff; border-bottom: 1px solid var(--rule); overflow: hidden; }
 .cimg img, .cimg video { position: absolute; top: 6px; left: 6px; width: calc(100% - 12px); height: calc(100% - 12px); object-fit: contain; }
@@ -158,8 +162,9 @@ footer { margin-top: 3.5rem; padding-top: 1rem; border-top: 1px solid var(--rule
   header { flex-direction: column-reverse; gap: 1.4rem; }
   .portrait { width: 158px; }
   .cards { grid-template-columns: 1fr; }
-  .news li { display: block; }
-  .news .date { display: inline-block; margin-right: 0.5rem; }
+  .news li { flex-wrap: wrap; row-gap: 0.35rem; }
+  .news .date { flex: 0 0 100%; }
+  .news .newsub li { flex-wrap: nowrap; }
   .talk { display: block; }
   .talk iframe { width: 100%; margin-bottom: 0.5rem; }
 }
@@ -208,41 +213,30 @@ footer { margin-top: 3.5rem; padding-top: 1rem; border-top: 1px solid var(--rule
 <section id="news">
   <h2>News</h2>
   <ul class="news">
-    <li><span class="date sans">Nov 2026</span><span><strong>Two papers accepted to WACV 2027:</strong>
+    <li class="multi"><span class="date sans">Nov 2026</span><div class="nbody"><strong>Two papers accepted to WACV 2027:</strong>
       <ul class="newsub">
-        <li><img class="nthumb" src="/img/papers/news_willitrender.jpg" alt="" width="160" height="160" loading="lazy"><em>Will It Render? Learned Attention Steering for Object Presence in Text-to-Video</em></li>
-        <li><a href="https://arxiv.org/abs/2609.27901"><img class="nthumb" src="/img/papers/news_reccar.jpg" alt="" width="160" height="136" loading="lazy"></a><a href="https://arxiv.org/abs/2609.27901"><em>All Modalities Are Equal, but Video Is More Equal: Closing the Cross-Attention Gap in Joint Video Generation</em></a></li>
-      </ul></span></li>
-    <li><span class="date sans">Oct 2026</span><span><em>Reasoning Models Can Control Their Chains of Thought When They Tell Themselves To</em> released on <a href="https://arxiv.org/abs/2610.23257">arXiv</a>.</span></li>
-    <li><span class="date sans">Apr 2026</span><span><em>LaMI: Augmenting Large Language Models via Late Multi-Image Fusion</em> accepted to ACL 2026 (main conference).</span></li>
-    <li><span class="date sans">Apr 2026</span><span><em>TempoControl: Temporal Attention Guidance for Text-to-Video Models</em> accepted to CVPR 2026.</span></li>
-    <li><span class="date sans">Apr 2026</span><span><em>Single Image Iterative Subject-driven Generation and Editing</em> accepted to the P13N Workshop at CVPR 2026.</span></li>
-    <li><span class="date sans">Mar 2026</span><span><em>Detection-Driven Object Count Optimization for Text-to-Image Diffusion Models</em> presented at WACV 2026.</span></li>
-    <li><span class="date sans">2024</span><span>Joined Bar-Ilan University as an Assistant Professor and founded the <a href="https://idansc.github.io/multimodal-lab/">Multimodal Lab</a>.</span></li>
-  </ul>
+        <li><img class="nthumb" src="/img/news/willitrender.gif" alt="" width="144" height="120" loading="lazy"><span class="nbody"><em>Will It Render? Learned Attention Steering for Object Presence in Text-to-Video</em></span></li>
+        <li><a class="nt" href="https://arxiv.org/abs/2609.27901"><img class="nthumb" src="/img/news/allmodalities.gif" alt="" width="144" height="120" loading="lazy"></a><span class="nbody"><a href="https://arxiv.org/abs/2609.27901"><em>All Modalities Are Equal, but Video Is More Equal: Closing the Cross-Attention Gap in Joint Video Generation</em></a></span></li>
+      </ul></div></li>
+    <li><span class="date sans">Oct 2026</span><a class="nt" href="https://arxiv.org/abs/2610.23257"><img class="nthumb" src="/img/news/cot.gif" alt="" width="144" height="120" loading="lazy"></a><span class="nbody"><em>Reasoning Models Can Control Their Chains of Thought When They Tell Themselves To</em> released on <a href="https://arxiv.org/abs/2610.23257">arXiv</a>.</span></li>
+    <li><span class="date sans">Apr 2026</span><a class="nt" href="https://guyyariv.github.io/LaMI/"><img class="nthumb" src="/img/news/lami.jpg" alt="" width="144" height="120" loading="lazy"></a><span class="nbody"><em>LaMI: Augmenting Large Language Models via Late Multi-Image Fusion</em> accepted to ACL 2026 (main conference).</span></li>
+    <li><span class="date sans">Apr 2026</span><a class="nt" href="https://shira-schiber.github.io/TempoControl/"><img class="nthumb" src="/img/news/tempocontrol.gif" alt="" width="144" height="120" loading="lazy"></a><span class="nbody"><em>TempoControl: Temporal Attention Guidance for Text-to-Video Models</em> accepted to CVPR 2026.</span></li>
+    <li><span class="date sans">Apr 2026</span><a class="nt" href="https://siso-paper.github.io/"><img class="nthumb" src="/img/news/siso.gif" alt="" width="144" height="120" loading="lazy"></a><span class="nbody"><em>Single Image Iterative Subject-driven Generation and Editing</em> accepted to the P13N Workshop at CVPR 2026.</span></li>
+    <li><span class="date sans">Mar 2026</span><a class="nt" href="https://ozzafar.github.io/count_token/"><img class="nthumb" src="/img/news/countopt.gif" alt="" width="144" height="120" loading="lazy"></a><span class="nbody"><em>Detection-Driven Object Count Optimization for Text-to-Image Diffusion Models</em> presented at WACV 2026.</span></li>
+    <li><span class="date sans">2024</span><a class="nt" href="https://idansc.github.io/multimodal-lab/"><img class="nthumb" src="/img/news/biu.jpg" alt="" width="144" height="120" loading="lazy"></a><span class="nbody">Joined Bar-Ilan University as an Assistant Professor and founded the <a href="https://idansc.github.io/multimodal-lab/">Multimodal Lab</a>.</span></li>
 </section>
 
 <section id="selected">
   <h2>Selected work</h2>
   <div class="cards">
 
-    <div class="card">
-      <div class="cimg"><video src="/img/papers/willitrender.mp4" poster="/img/papers/willitrender.jpg" autoplay loop muted playsinline preload="metadata" aria-label="Will It Render teaser"></video></div>
+    <a class="card" href="https://arxiv.org/abs/2610.23257">
+      <div class="cimg"><img src="/img/papers/cotcontrol.jpg" alt="Self-instructed chain-of-thought teaser" loading="lazy"></div>
       <div class="cbody">
-        <span class="cvenue sans">WACV 2027</span>
-        <div class="ctitle">Will It Render? Learned Attention Steering for Object Presence in Text-to-Video</div>
-        <p class="cauth sans">B. Fishman, G. Chechik, <b>I. Schwartz</b></p>
-        <p class="ctag">Learned attention probes steer text-to-video models at inference time so every requested object appears.</p>
-      </div>
-    </div>
-
-    <a class="card" href="https://arxiv.org/abs/2609.27901">
-      <div class="cimg"><img src="/img/papers/reccar.jpg" alt="All Modalities Are Equal teaser" loading="lazy"></div>
-      <div class="cbody">
-        <span class="cvenue sans">WACV 2027</span>
-        <div class="ctitle">All Modalities Are Equal, but Video Is More Equal: Closing the Cross-Attention Gap in Joint Video Generation</div>
-        <p class="cauth sans">O. Rahamim, D. Samuel, <b>I. Schwartz</b>, G. Chechik</p>
-        <p class="ctag">Aligns the weak modality-to-video attention with the strong video-to-modality one, improving joint video-motion and video-audio generation.</p>
+        <span class="cvenue sans">arXiv 2026</span>
+        <div class="ctitle">Reasoning Models Can Control Their Chains of Thought When They Tell Themselves To</div>
+        <p class="cauth sans">U. Dolev, <b>I. Schwartz</b>, Y. Goldberg</p>
+        <p class="ctag">Reasoning models follow constraints on their chain of thought far better when the instruction is placed inside the reasoning itself, which also lets them evade CoT monitors.</p>
       </div>
     </a>
 
